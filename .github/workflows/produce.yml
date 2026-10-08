@@ -1,0 +1,81 @@
+name: Deep History Studio
+
+on:
+  workflow_dispatch:
+    inputs:
+      topic: {description: "optional topic override — empty = next in queue", required: false}
+  schedule:
+    - cron: "0 13 * * *"   # daily 13:00 UTC; remove if you want manual-only
+
+permissions:
+  contents: write
+
+concurrency:
+  group: produce
+  cancel-in-progress: false
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TOPIC: ${{ github.event.inputs.topic }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      HUB_URL: ${{ secrets.HUB_URL }}
+      HUB_WEBHOOK_SECRET: ${{ secrets.HUB_WEBHOOK_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11", cache: pip}
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+      - run: pip install -r requirements.txt
+      - name: run pipeline
+        id: run
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          EP="EP-${{ github.run_id }}"
+          STATUS=0
+          python -m py_compile pipeline.py config.py researcher.py writer.py illustrator.py narrator.py renderer.py 2>&1 | tee /tmp/log.txt || STATUS=1
+          if [ "$STATUS" = "0" ]; then
+            python pipeline.py write   --episode "$EP" --topic "$TOPIC" 2>&1 | tee -a /tmp/log.txt || STATUS=1
+          fi
+          if [ "$STATUS" = "0" ]; then
+            python pipeline.py produce --episode "$EP" 2>&1 | tee -a /tmp/log.txt || STATUS=1
+          fi
+          if [ "$STATUS" = "0" ]; then
+            python pipeline.py notify  --episode "$EP" 2>&1 | tee -a /tmp/log.txt || STATUS=1
+          fi
+          cat /tmp/log.txt
+          [ "$STATUS" = "0" ] || { echo "PIPELINE FAILED"; exit 1; }
+      - name: save series memory
+        if: success()
+        run: |
+          git config user.name "history-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git pull --rebase --autostash origin main || true
+          git add memory/ || true
+          git diff --cached --quiet && exit 0
+          git commit -m "memory: series progress"
+          for i in 1 2 3; do git push && break || (git pull --rebase --autostash origin main; sleep 3); done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: episode
+          path: episodes/*.mp4
+          retention-days: 14
+      - name: report errors
+        if: ${{ always() && steps.run.outcome != 'success' }}
+        run: |
+          if [ -f /tmp/log.txt ]; then TAIL=$(tail -c 3000 /tmp/log.txt); else TAIL="PIPELINE NEVER STARTED"; fi
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=🧱 DEEP HISTORY STUDIO FAILED — real error:
+
+          ${TAIL}"
