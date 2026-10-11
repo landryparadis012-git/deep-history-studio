@@ -85,10 +85,12 @@ def episode_dir_for(ep_id):
 
 
 def find_episode_dir(ep_id):
-    if os.path.isdir(episode_dir_for(ep_id)):
+    if ep_id and os.path.isdir(episode_dir_for(ep_id)):
         return episode_dir_for(ep_id)
-    matches = sorted(glob.glob(os.path.join(EPISODES_DIR, f"{ep_id}*")))
-    return matches[0] if matches else None
+    if ep_id:
+        matches = sorted(glob.glob(os.path.join(EPISODES_DIR, f"{ep_id}*")))
+        return matches[0] if matches else None
+    return None
 
 
 # ---------------- telegram ----------------
@@ -186,7 +188,10 @@ def cmd_write(args):
         _, pending = load_topics()
         topic = pending[0]
 
-    ep_id = f"ep{state['episode_counter'] + 1:03d}-{slugify(topic)[:40]}"
+    if args.episode_id:
+        ep_id = args.episode_id
+    else:
+        ep_id = f"ep{state['episode_counter'] + 1:03d}-{slugify(topic)[:40]}"
     ep_dir = episode_dir_for(ep_id)
     os.makedirs(ep_dir, exist_ok=True)
     print(f"[pipeline] episode topic: {topic} -> {ep_id}")
@@ -203,7 +208,7 @@ def cmd_write(args):
 
 
 def cmd_produce(args):
-    ep_dir = find_episode_dir(args.episode) if args.episode else None
+    ep_dir = find_episode_dir(args.episode_id)
     if not ep_dir:
         raise RuntimeError("produce: unknown episode (run write first)")
 
@@ -229,7 +234,7 @@ def cmd_produce(args):
 
 def cmd_notify(args):
     state = load_state()
-    ep_dir = find_episode_dir(args.episode)
+    ep_dir = find_episode_dir(args.episode_id)
     if not ep_dir:
         raise RuntimeError("notify: unknown episode")
     ep_id = os.path.basename(ep_dir)
@@ -271,9 +276,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("command", choices=["write", "produce", "notify"])
     ap.add_argument("episode", nargs="?", default=None)
+    ap.add_argument("--episode", dest="episode_id", default=None)
     ap.add_argument("--topic", default=None)
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args()
+    if not args.episode_id:
+        args.episode_id = args.episode
 
     if args.command == "write":
         keys = {
