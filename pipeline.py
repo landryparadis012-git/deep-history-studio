@@ -11,7 +11,6 @@ import argparse
 import glob
 import json
 import os
-import re
 import sys
 import time
 import urllib.request
@@ -21,8 +20,8 @@ from config import (
     STUDIO_NAME, ENGINE_VERSION,
 )
 from researcher import research_topic, slugify
-from writer import write_script
-from illustrator import illustrate_episode, save_shotlist, DailyLimitError
+from writer import write_script, word_count
+from illustrator import illustrate_episode, write_shotlist, DailyLimitError
 from narrator import narrate_episode
 from renderer import render_episode
 
@@ -51,11 +50,22 @@ def save_state(s):
 # ---------------- topic queue ----------------
 
 def load_topics():
+    """Load the queue. Missing file -> create template. Empty -> loud error."""
+    if not os.path.exists(TOPICS_PATH):
+        os.makedirs(os.path.dirname(TOPICS_PATH) or ".", exist_ok=True)
+        with open(TOPICS_PATH, "w") as f:
+            json.dump({"topics": [], "done": []}, f, indent=1)
     with open(TOPICS_PATH) as f:
         data = json.load(f)
     topics = [t for t in data.get("topics", []) if isinstance(t, str) and t.strip()]
     done = data.setdefault("done", [])
-    return data, [t for t in topics if t not in done]
+    pending = [t for t in topics if t not in done]
+    if not pending:
+        raise RuntimeError(
+            "memory/topics.json has no queued topics. "
+            "Add a topic string to the 'topics' list and re-run."
+        )
+    return data, pending
 
 
 def mark_done(topic):
@@ -63,7 +73,6 @@ def mark_done(topic):
         data = json.load(f)
     if topic not in data.setdefault("done", []):
         data["done"].append(topic)
-    data["topics"] = [t for t in data.get("topics", []) if t != topic or t in data["done"] and False]
     data["topics"] = [t for t in data.get("topics", []) if t != topic]
     with open(TOPICS_PATH, "w") as f:
         json.dump(data, f, indent=1)
@@ -84,10 +93,15 @@ def find_episode_dir(ep_id):
 
 # ---------------- telegram ----------------
 
-def tg(method, payload):
+def tok_for_bot():
     tok = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     if tok.lower().startswith("bot"):
         tok = tok[3:].strip()
+    return tok
+
+
+def tg(method, payload):
+    tok = tok_for_bot()
     if not tok:
         raise RuntimeError("no TELEGRAM_BOT_TOKEN")
     url = f"https://api.telegram.org/bot{tok}/{method}"
@@ -95,216 +109,184 @@ def tg(method, payload):
         url, data=json.dumps(payload).encode(),
         headers={**UA, "Content-Type": "application/json"},
     )
-    with urllib.request.urlopen(req, timeout=300) as r:
+    with urllib.request.urlopen(req, timeout=120) as r:
         return json.loads(r.read().decode())
 
 
-def tg_report(text):
-    """Failure reporter — never raises (v1 pattern)."""
-    chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-    if not chat:
+def send_video(path, caption):
+    size_mb = os.path.getsize(path) / (1024 * 1024)
+    if size_mb > TELEGRAM_MB_LIMIT:
+        raise RuntimeError(
+            f"video is {size_mb:.1f}MB > {TELEGRAM_MB_LIMIT}MB limit"
+        )
+    tok = tok_for_bot()
+    boundary = f"----dhs{int(time.time())}"
+    bb = boundary.encode()
+    fields = [("chat_id", os.environ.get("TELEGRAM_CHAT_ID", "")),
+              ("caption", caption)]
+    with open(path, "rb") as f:
+        content = b""
+        for name, val in fields:
+            content += b"--" + bb + b"\r\n"
+            content += f'Content-Disposition: form-data; name="{name}"\r\n\r\n'.encode()
+            content += (val or "").encode() + b"\r\n"
+        content += b"--" + bb + b"\r\n"
+        content += (b'Content-Disposition: form-data; name="video"; '
+                    b'filename="episode.mp4"\r\n'
+                    b"Content-Type: video/mp4\r\n\r\n")
+        content += f.read() + b"\r\n"
+        content += b"--" + bb + b"--\r\n"
+    req = urllib.request.Request(
+        f"https://api.telegram.org/bot{tok}/sendVideo",
+        data=content,
+        headers={
+            "Content-Type": f"multipart/form-data; boundary={boundary}",
+            "User-Agent": UA["User-Agent"],
+        },
+    )
+    with urllib.request.urlopen(req, timeout=600) as r:
+        return json.loads(r.read().decode())
+
+
+def send_message(text):
+    return tg("sendMessage", {
+        "chat_id": os.environ.get("TELEGRAM_CHAT_ID", ""),
+        "text": text,
+    })
+
+
+# ---------------- hub ----------------
+
+def hub_emit(event, payload):
+    if not HUB_EMIT:
+        return
+    hub_url = os.environ.get("OPSHUB_URL", "").strip()
+    if not hub_url:
         return
     try:
-        tg("sendMessage", {"chat_id": chat, "text": text[:3500]})
-    except Exception as e:
-        print(f"[tg] report failed: {e}")
-
-
-# ---------------- hub event ----------------
-
-def hub_emit_episode(script, final_path, duration_s):
-    url = os.environ.get("HUB_URL", "").strip()
-    secret = os.environ.get("HUB_WEBHOOK_SECRET", "").strip()
-    if not HUB_EMIT or not url or not secret:
-        return
-    import hashlib
-    import hmac
-    ev = {
-        "schema_version": 1,
-        "event_id": f"history-{slugify(script['title'])}-ready",
-        "type": "content.episode_ready",
-        "source": "studio",
-        "series_id": "deep-history",
-        "channel_name": STUDIO_NAME,
-        "episode_number": int(script.get("episode_number", 0)),
-        "title": script["title"],
-        "hook_type": "documentary",
-        "duration_sec": int(duration_s),
-        "occurred_at": int(time.time()),
-        "engine_version": ENGINE_VERSION,
-    }
-    try:
-        body = json.dumps(ev).encode()
-        mac = hmac.new(secret.encode(), body, hashlib.sha256)
         req = urllib.request.Request(
-            url.rstrip("/") + "/ingest", data=body, method="POST",
-            headers={"Content-Type": "application/json",
-                     "x-hub-signature-256": "sha256=" + mac.hexdigest()},
+            hub_url.rstrip("/") + "/emit",
+            data=json.dumps({"event": event, **payload}).encode(),
+            headers={**UA, "Content-Type": "application/json"},
         )
         with urllib.request.urlopen(req, timeout=15) as r:
-            print(f"[hub] content.episode_ready -> {r.status}")
+            r.read()
+        print(f"[hub] emitted {event}")
     except Exception as e:
         print(f"[hub] emit failed (non-fatal): {e}")
 
 
-# ---------------- subcommands ----------------
+# ---------------- commands ----------------
 
-def cmd_write(ep_id, topic=None):
+def cmd_write(args):
     state = load_state()
-    data, pending = load_topics()
+    if args.topic:
+        topic = args.topic
+    else:
+        _, pending = load_topics()
+        topic = pending[0]
 
-    if topic is None:
-        # resume interrupted topic first, else take next queued
-        topic = state.get("current_topic") or (pending[0] if pending else None)
-    if not topic:
-        print("PIPELINE FAILED: no topics queued — add one to memory/topics.json")
-        raise SystemExit(1)
+    ep_id = f"ep{state['episode_counter'] + 1:03d}-{slugify(topic)[:40]}"
+    ep_dir = episode_dir_for(ep_id)
+    os.makedirs(ep_dir, exist_ok=True)
+    print(f"[pipeline] episode topic: {topic} -> {ep_id}")
 
+    research_topic(topic)  # writes memory/sources/<topic>.json
+    _, script = write_script(topic, args.keys, ep_dir, force=args.force)
+
+    state["current_episode"] = ep_id
     state["current_topic"] = topic
-    if not state.get("current_episode"):
-        state["episode_counter"] = state.get("episode_counter", 0) + 1
-        state["current_episode"] = ep_id
     save_state(state)
-
-    print(f"[pipeline] episode {ep_id} | topic: {topic}")
-
-    # 1) research (cached per topic)
-    research_topic(topic)
-
-    # 2) script
-    api_keys = {
-        "groq": os.environ.get("GROQ_API_KEY", ""),
-        "gemini": os.environ.get("GEMINI_API_KEY", ""),
-    }
-    edir = episode_dir_for(ep_id)
-    _, script = write_script(topic, api_keys, edir)
-    script["episode_number"] = state["episode_counter"]
-    with open(os.path.join(edir, "script.json"), "w") as f:
-        json.dump(script, f, indent=1)
-    print(f"[pipeline] write complete: '{script['title']}'")
+    print(f"[pipeline] write complete: {ep_id} "
+          f"({len(script['chapters'])} chapters, {word_count(script)} words)")
+    return ep_id
 
 
-def cmd_produce(ep_id):
-    edir = find_episode_dir(ep_id)
-    if not edir:
-        print(f"PIPELINE FAILED: no episode dir for {ep_id}")
-        raise SystemExit(1)
-    with open(os.path.join(edir, "script.json")) as f:
+def cmd_produce(args):
+    ep_dir = find_episode_dir(args.episode) if args.episode else None
+    if not ep_dir:
+        raise RuntimeError("produce: unknown episode (run write first)")
+
+    with open(os.path.join(ep_dir, "script.json")) as f:
         script = json.load(f)
 
-    account_id = os.environ.get("CLOUDFLARE_ACCOUNT_ID", "").strip()
-    token = os.environ.get("CLOUDFLARE_API_TOKEN", "").strip()
-    if not account_id or not token:
-        print("PIPELINE FAILED: CLOUDFLARE_ACCOUNT_ID / CLOUDFLARE_API_TOKEN missing")
-        raise SystemExit(1)
+    cf_acct = os.environ["CLOUDFLARE_ACCOUNT_ID"]
+    cf_tok = os.environ["CLOUDFLARE_API_TOKEN"]
 
-    # 3) images (raises DailyLimitError on quota — handled by workflow)
-    shots = illustrate_episode(script, edir, account_id, token)
-    save_shotlist(edir, shots)
-
-    # 4) narration
-    shots = narrate_episode(edir)
-
-    # 5) render
-    final = render_episode(edir)
-    print(f"[pipeline] produce complete: {final}")
-
-
-def cmd_notify(ep_id):
-    edir = find_episode_dir(ep_id)
-    if not edir:
-        print(f"PIPELINE FAILED: no episode dir for {ep_id}")
-        raise SystemExit(1)
-    with open(os.path.join(edir, "script.json")) as f:
-        script = json.load(f)
-    finals = sorted(glob.glob(os.path.join(EPISODES_DIR, "episode_*.mp4")))
-    final = finals[-1] if finals else None
-    if not final or not os.path.exists(final):
-        print("PIPELINE FAILED: no final mp4 found")
-        raise SystemExit(1)
-
-    size_mb = os.path.getsize(final) / (1024 * 1024)
-    dur = 0
     try:
-        p = os.popen(
-            f"ffprobe -v error -show_entries format=duration "
-            f"-of default=noprint_wrappers=1:nokey=1 '{final}'"
-        )
-        dur = float(p.read().strip() or 0)
-    except Exception:
-        pass
+        illustrate_episode(script, ep_dir, cf_acct, cf_tok)
+        _, shots = write_shotlist(script, ep_dir)
+        narrate_episode(ep_dir, shots=shots)
+        final = render_episode(ep_dir)
+    except DailyLimitError as e:
+        print(f"[pipeline] DAILY LIMIT — {e}")
+        print("[pipeline] resume after UTC midnight: just re-run the workflow")
+        sys.exit(42)  # distinct exit code: quota stop, not a bug
 
+    print(f"[pipeline] produce complete: {final}")
+    return ep_dir, final
+
+
+def cmd_notify(args):
     state = load_state()
-    chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-    if chat:
-        meta = (f"🏛 {script['title']}\n\n{script.get('description', '')}\n\n"
-                f"⏱ ~{dur / 60:.0f} min | {size_mb:.0f} MB | ep {script.get('episode_number', '?')}\n"
-                f"{' '.join('#' + h.lstrip('#') for h in script.get('hashtags', []))}")
-        if size_mb <= TELEGRAM_MB_LIMIT:
-            with open(final, "rb") as f:
-                data = f.read()
-            boundary = "----DsBoundary7MA4YWxkTrZu0gW"
-            parts = [
-                f'--{boundary}\r\nContent-Disposition: form-data; name="chat_id"\r\n\r\n{chat}\r\n'.encode(),
-                f'--{boundary}\r\nContent-Disposition: form-data; name="caption"\r\n\r\n'.encode()
-                + meta.encode() + b"\r\n",
-                f'--{boundary}\r\nContent-Disposition: form-data; name="supports_streaming"\r\n\r\ntrue\r\n'.encode(),
-                (f'--{boundary}\r\nContent-Disposition: form-data; name="video"; '
-                 f'filename="{os.path.basename(final)}"\r\nContent-Type: video/mp4\r\n\r\n').encode(),
-                data, f"\r\n--{boundary}--\r\n".encode(),
-            ]
-            tok = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-            if tok.lower().startswith("bot"):
-                tok = tok[3:].strip()
-            req = urllib.request.Request(
-                f"https://api.telegram.org/bot{tok}/sendVideo",
-                data=b"".join(parts),
-                headers={"Content-Type": f"multipart/form-data; boundary={boundary}"},
-            )
-            with urllib.request.urlopen(req, timeout=900) as r:
-                resp = json.loads(r.read().decode())
-            if not resp.get("ok"):
-                raise RuntimeError(f"telegram sendVideo rejected: {resp}")
-            print("[deliver] video sent to Telegram")
-        else:
-            print(f"[deliver] {size_mb:.0f}MB > {TELEGRAM_MB_LIMIT}MB — uploaded as workflow artifact instead")
-            tg_report(f"📦 {script['title']} is {size_mb:.0f}MB — too big for Telegram. "
-                      f"Download it from this workflow run's Artifacts section.")
+    ep_dir = find_episode_dir(args.episode)
+    if not ep_dir:
+        raise RuntimeError("notify: unknown episode")
+    ep_id = os.path.basename(ep_dir)
+    topic = state.get("current_topic") or ep_id
 
-    # 6) ONLY on full success: close the topic, emit to OpsHub
-    hub_emit_episode(script, final, dur)
-    topic = state.get("current_topic")
-    if topic:
-        mark_done(topic)
-    state["current_topic"] = None
-    state["current_episode"] = None
-    save_state(state)
-    print(f"[pipeline] episode complete — '{script['title']}' delivered")
+    final = os.path.join(
+        EPISODES_DIR,
+        f"episode_{os.path.basename(os.path.normpath(ep_dir))}.mp4",
+    )
+    if not os.path.exists(final):
+        raise RuntimeError(f"notify: missing video {final}")
+
+    with open(os.path.join(ep_dir, "script.json")) as f:
+        script = json.load(f)
+    tags = " ".join(script.get("hashtags", []))
+    caption = f"🏛 {script.get('title', topic)}\n\n{tags}"
+
+    delivered = "telegram"
+    try:
+        send_video(final, caption)
+        print("[pipeline] Telegram video sent")
+    except Exception as e:
+        print(f"[pipeline] Telegram delivery failed: {e}")
+
+    hub_emit("content.episode_ready", {
+        "studio": STUDIO_NAME,
+        "engine": ENGINE_VERSION,
+        "episode": ep_id,
+        "topic": topic,
+        "title": script.get("title", topic),
+        "description": script.get("description", ""),
+        "hashtags": script.get("hashtags", []),
+        "file": final,
+    })
+    return delivered
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("command", choices=["write", "produce", "notify"])
+    ap.add_argument("episode", nargs="?", default=None)
+    ap.add_argument("--topic", default=None)
+    ap.add_argument("--force", action="store_true")
+    args = ap.parse_args()
+
+    if args.command == "write":
+        keys = {
+            "groq": os.environ.get("GROQ_API_KEY", ""),
+            "gemini": os.environ.get("GEMINI_API_KEY", ""),
+        }
+        args.keys = keys
+        cmd_write(args)
+    elif args.command == "produce":
+        cmd_produce(args)
+    elif args.command == "notify":
+        cmd_notify(args)
 
 
 if __name__ == "__main__":
-    ap = argparse.ArgumentParser()
-    ap.add_argument("command", choices=["write", "produce", "notify"])
-    ap.add_argument("--episode", required=True)
-    ap.add_argument("--topic", default=None)
-    args = ap.parse_args()
-    try:
-        if args.command == "write":
-            cmd_write(args.episode, args.topic)
-        elif args.command == "produce":
-            cmd_produce(args.episode)
-        elif args.command == "notify":
-            cmd_notify(args.episode)
-    except DailyLimitError as e:
-        # drop the autoresume flag -> listener/workflow retries after UTC reset
-        os.makedirs("memory", exist_ok=True)
-        reset = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(
-            (int(time.time() // 86400) + 1) * 86400))
-        with open("memory/autoresume.flag", "w") as f:
-            f.write(reset)
-        tg_report(f"🛑 Cloudflare daily image quota reached. Resets {reset} UTC. "
-                  f"Retrying is automatic — nothing is lost.")
-        raise SystemExit(2)
-    except Exception as e:
-        tg_report(f"🧱 DEEP HISTORY STUDIO FAILED\n\n{type(e).__name__}: {e}")
-        raise
+    main()
