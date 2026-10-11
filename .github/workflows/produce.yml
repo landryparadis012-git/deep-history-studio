@@ -20,6 +20,19 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Restore episode work (images/audio/script) from cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            episodes/*/images
+            episodes/*/audio
+            episodes/*/script.json
+            episodes/*/shotlist.json
+            memory
+          key: dhs-work-${{ github.run_id }}
+          restore-keys: |
+            dhs-work-
+
       - name: Install deps
         run: |
           set -o pipefail
@@ -94,7 +107,7 @@ jobs:
           if-no-files-found: ignore
           retention-days: 30
 
-      - name: Failure report to Telegram (real traceback)
+      - name: Report result to Telegram (quota-aware)
         if: failure()
         run: |
           python - << 'PYEOF'
@@ -120,7 +133,15 @@ jobs:
           if not log_tail:
               log_tail = "(log not found — download the run-logs artifact)"
 
-          text = f"🧱 DEEP HISTORY STUDIO FAILED at step: {step}\nLog tail:\n{log_tail}"[:4000]
+          if "DAILY LIMIT" in log_tail or "daily free allocation" in log_tail:
+              text = ("⏳ Cloudflare daily neurons used up — run PAUSED, not broken.\n"
+                      "Re-run after UTC midnight; cached images resume where it stopped.\n\n"
+                      + log_tail[-1500:])
+          else:
+              text = (f"🧱 DEEP HISTORY STUDIO FAILED at step: {step}\n"
+                      "Log tail:\n" + log_tail)
+          text = text[:4000]
+
           req = urllib.request.Request(
               f"https://api.telegram.org/bot{tok}/sendMessage",
               data=json.dumps({"chat_id": chat, "text": text}).encode(),
