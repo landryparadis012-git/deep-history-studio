@@ -93,17 +93,37 @@ def find_episode_dir(ep_id):
     return None
 
 
+def latest_episode_dir():
+    """Newest episode folder on disk (fallback when no id/state is given)."""
+    if not os.path.isdir(EPISODES_DIR):
+        return None
+    dirs = [
+        d for d in glob.glob(os.path.join(EPISODES_DIR, "*"))
+        if os.path.isdir(d)
+        and os.path.exists(os.path.join(d, "script.json"))
+    ]
+    if not dirs:
+        return None
+    return max(dirs, key=os.path.getmtime)
+
+
+def resolve_episode_dir(args):
+    """--episode > state.current_episode > newest episode on disk."""
+    state = load_state()
+    ep_dir = find_episode_dir(args.episode_id)
+    if not ep_dir:
+        ep_dir = find_episode_dir(state.get("current_episode"))
+    if not ep_dir:
+        ep_dir = latest_episode_dir()
+    return ep_dir, state
+
+
 # ---------------- telegram ----------------
 
-def tok_for_bot():
+def tg(method, payload):
     tok = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     if tok.lower().startswith("bot"):
         tok = tok[3:].strip()
-    return tok
-
-
-def tg(method, payload):
-    tok = tok_for_bot()
     if not tok:
         raise RuntimeError("no TELEGRAM_BOT_TOKEN")
     url = f"https://api.telegram.org/bot{tok}/{method}"
@@ -113,6 +133,13 @@ def tg(method, payload):
     )
     with urllib.request.urlopen(req, timeout=120) as r:
         return json.loads(r.read().decode())
+
+
+def tok_for_bot():
+    tok = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    if tok.lower().startswith("bot"):
+        tok = tok[3:].strip()
+    return tok
 
 
 def send_video(path, caption):
@@ -208,7 +235,7 @@ def cmd_write(args):
 
 
 def cmd_produce(args):
-    ep_dir = find_episode_dir(args.episode_id)
+    ep_dir, state = resolve_episode_dir(args)
     if not ep_dir:
         raise RuntimeError("produce: unknown episode (run write first)")
 
@@ -233,8 +260,7 @@ def cmd_produce(args):
 
 
 def cmd_notify(args):
-    state = load_state()
-    ep_dir = find_episode_dir(args.episode_id)
+    ep_dir, state = resolve_episode_dir(args)
     if not ep_dir:
         raise RuntimeError("notify: unknown episode")
     ep_id = os.path.basename(ep_dir)
@@ -280,6 +306,7 @@ def main():
     ap.add_argument("--topic", default=None)
     ap.add_argument("--force", action="store_true")
     args = ap.parse_args()
+    # --episode wins; positional fallback; produce/notify resolve later anyway
     if not args.episode_id:
         args.episode_id = args.episode
 
