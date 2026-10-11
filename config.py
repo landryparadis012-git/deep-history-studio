@@ -59,10 +59,11 @@ AUDIO_BITRATE = "96k"
 GROQ_MODELS = [
     "openai/gpt-oss-120b",
     "openai/gpt-oss-20b",
-    "qwen/qwen3-32b",
+    # qwen3-32b retired from standard Groq access 2026-07-17 -> removed
 ]
-GROQ_MAX_COMPLETION_TOKENS = 6000   # v1 lesson: default ~1024 truncates JSON
-GEMINI_MODEL = "gemini-flash-latest"
+GROQ_MAX_COMPLETION_TOKENS = 12000  # headroom: gpt-oss reasoning + full script JSON
+# gemini-flash-latest is an unstable alias; pin the stable GA flash model
+GEMINI_MODEL = "gemini-3.8-flash"
 
 # ---------------- research ----------------
 # Wikipedia REST API is free, no key. These page fetches per topic cap the
@@ -75,8 +76,7 @@ IMAGE_MODEL = "@cf/black-forest-labs/flux-1-schnell"
 IMAGE_STEPS = 4                  # schnell is 1-4 steps; 4 = best quality
 IMAGES_PER_CHAPTER = 6           # ~30-42 images per episode
 
-# ---------------- series memory ----------------
-MAX_EPISODES_PER_TOPIC = 1       # one episode per queued topic
+# ---------------- paths ----------------
 STATE_PATH = "memory/state.json"
 TOPICS_PATH = "memory/topics.json"
 SOURCES_DIR = "memory/sources"
