@@ -27,10 +27,17 @@ async def _speak(text, out_path, rate, pitch, tries=3):
     raise RuntimeError(f"narrator: failed for '{text[:40]}...': {last}")
 
 
-def load_shots(episode_dir):
-    """Shotlist + script narrations, merged into one list by index."""
-    with open(os.path.join(episode_dir, "shotlist.json")) as f:
-        shots = json.load(f)
+def load_shots(episode_dir, shots=None):
+    """Shotlist + script narrations merged by index.
+
+    IMPORTANT: shotlists produced by illustrator.write_shotlist carry the
+    image/audio paths but NO narration text, and the pipeline passes such a
+    shotlist straight to narrate_episode(). Narration must therefore be
+    merged in here, filling any missing beat from script.json.
+    """
+    if shots is None:
+        with open(os.path.join(episode_dir, "shotlist.json")) as f:
+            shots = json.load(f)
     with open(os.path.join(episode_dir, "script.json")) as f:
         script = json.load(f)
     flat = []
@@ -38,14 +45,17 @@ def load_shots(episode_dir):
         for beat in ch["beats"]:
             flat.append(beat.get("narration", ""))
     for shot in shots:
-        shot.setdefault("narration", flat[shot["index"] - 1])
+        if not (shot.get("narration") or "").strip():
+            idx = shot.get("index", 0)
+            if 1 <= idx <= len(flat):
+                shot["narration"] = flat[idx - 1]
     return shots
 
 
 def narrate_episode(episode_dir, shots=None):
     """Narrate every beat. Idempotent: existing mp3s are skipped."""
-    if shots is None:
-        shots = load_shots(episode_dir)
+    # always merge narrations from script.json (shotlists lack the text)
+    shots = load_shots(episode_dir, shots=shots)
 
     os.makedirs(os.path.join(episode_dir, "audio"), exist_ok=True)
 
