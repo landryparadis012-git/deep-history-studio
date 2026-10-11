@@ -5,12 +5,14 @@ Cloudflare Workers AI (flux-1-schnell). Style comes from config STYLE_SUFFIX
 so every image shares one visual identity. Budget: ~40 images/run.
 Stdlib only.
 """
+import base64
 import json
 import os
 import time
+import urllib.error
 import urllib.request
 
-from config import IMAGE_MODEL, IMAGE_STEPS, STYLE_SUFFIX, WIDTH, HEIGHT
+from config import IMAGE_MODEL, IMAGE_STEPS, STYLE_SUFFIX
 
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/120 Safari/537.36"}
 
@@ -20,16 +22,39 @@ def cf_url(account_id):
             f"/ai/run/{IMAGE_MODEL}")
 
 
+def extract_image(payload):
+    """Workers AI returns a JSON envelope with base64 in result.image.
+    Accept raw PNG bytes too, in case a model streams the image directly."""
+    if isinstance(payload, (bytes, bytearray)):
+        if payload[:8].startswith(b"\x89PNG"):
+            return bytes(payload)
+        payload = json.loads(payload.decode("utf-8", errors="replace"))
+    if not isinstance(payload, dict):
+        raise RuntimeError("image response is not JSON")
+    if payload.get("success") is False:
+        errs = payload.get("errors") or []
+        raise RuntimeError(f"cloudflare error: {errs}")
+    result = payload.get("result") or {}
+    b64 = result.get("image") or result.get("image_url") or ""
+    if isinstance(b64, str) and b64.startswith("data:image"):
+        b64 = b64.split(",", 1)[-1]
+    if not b64:
+        raise RuntimeError(f"no image field in response keys={list(result)}")
+    return base64.b64decode(b64)
+
+
 def generate_image(account_id, token, prompt, out_path, tries=3):
-    """One flux-1-schnell call -> PNG on disk. Raises on hard failure."""
+    """One flux-1-schnell call -> PNG on disk. Raises on hard failure.
+
+    Cloudflare's schema for flux-1-schnell allows ONLY prompt (<=2048 chars)
+    and steps (<=8). width/height/negative_prompt are rejected with HTTP 400.
+    Output is a square image; the renderer crops it to the vertical frame.
+    """
+    full_prompt = f"{prompt}. {STYLE_SUFFIX}"[:2048]
     body = {
-        "prompt": f"{prompt}. {STYLE_SUFFIX}",
+        "prompt": full_prompt,
         "steps": IMAGE_STEPS,
-        "width": WIDTH,
-        "height": HEIGHT,
     }
-    # flux-1-schnell on Workers AI rejects a negative prompt field on some
-    # versions; IMAGE_NEGATIVE lives in config for a future provider swap.
     data = json.dumps(body).encode()
     last_err = None
     for i in range(tries):
@@ -39,17 +64,32 @@ def generate_image(account_id, token, prompt, out_path, tries=3):
                 headers={**UA, "Content-Type": "application/json",
                          "Authorization": f"Bearer {token}"},
             )
-            with urllib.request.urlopen(req, timeout=120) as r:
-                img = r.read()
+            with urllib.request.urlopen(req, timeout=180) as r:
+                raw = r.read()
+            img = extract_image(raw)
             if len(img) < 1000:
                 raise RuntimeError(f"image too small ({len(img)} bytes)")
             with open(out_path, "wb") as f:
                 f.write(img)
             return
+        except urllib.error.HTTPError as e:
+            # read the API error body: it names the offending field
+            try:
+                detail = e.read().decode("utf-8", errors="replace")[:400]
+            except Exception:
+                detail = ""
+            last_err = f"HTTP {e.code}: {detail}"
+            if e.code in (429, 402):
+                raise DailyLimitError(f"cloudflare quota: {last_err}") from e
+            if e.code == 400:
+                # permanent for this payload -> no point retrying
+                raise RuntimeError(f"illustrator: bad request: {last_err}") from e
+            time.sleep(3 * (i + 1))
+        except DailyLimitError:
+            raise
         except Exception as e:
             last_err = e
             msg = str(e)
-            # confirmed daily-quota shapes (v1 lessons): stop for the day
             if "429" in msg or "402" in msg:
                 raise DailyLimitError(f"cloudflare quota: {msg}") from e
             time.sleep(3 * (i + 1))
