@@ -119,12 +119,16 @@ def writer_prompt(topic, digest):
 
 # ---------------- model calls ----------------
 
-def call_groq(model, prompt, key, tries=2):
+def call_groq(model, prompt, key, tries=3):
+    """Chat completion. gpt-oss reasoning models can return empty content
+    (budget consumed by reasoning, finish_reason=length) -> detected and
+    retried. reasoning_effort=low keeps reasoning tokens off the budget."""
     body = json.dumps({
         "model": model,
         "messages": [{"role": "user", "content": prompt}],
         "max_completion_tokens": GROQ_MAX_COMPLETION_TOKENS,
         "temperature": 0.7,
+        "reasoning_effort": "low",
     }).encode()
     last = None
     for i in range(tries):
@@ -134,9 +138,21 @@ def call_groq(model, prompt, key, tries=2):
                 headers={**UA, "Content-Type": "application/json",
                          "Authorization": f"Bearer {key}"},
             )
-            with urllib.request.urlopen(req, timeout=180) as r:
+            with urllib.request.urlopen(req, timeout=240) as r:
                 data = json.loads(r.read().decode())
-            return data["choices"][0]["message"]["content"]
+            content = (data["choices"][0]["message"].get("content") or "").strip()
+            finish = data["choices"][0].get("finish_reason", "")
+            if content:
+                return content
+            # empty content: reasoning ate the budget -> log + retry
+            usage = data.get("usage", {})
+            details = usage.get("completion_tokens_details") or {}
+            last = (f"empty content (finish={finish}, "
+                    f"completion_tokens={usage.get('completion_tokens')}, "
+                    f"reasoning_tokens={details.get('reasoning_tokens')})")
+            print(f"[writer] groq {model}: {last}, retrying")
+            time.sleep(2 * (i + 1))
+            continue
         except Exception as e:
             last = e
             msg = str(e)
@@ -147,7 +163,9 @@ def call_groq(model, prompt, key, tries=2):
     raise RuntimeError(f"groq {model} failed: {last}")
 
 
-def call_gemini(prompt, key, tries=2):
+def call_gemini(prompt, key, tries=4):
+    """generateContent. 503/429 are transient (Google: backoff + retry).
+    Final answer lives in candidates[0].content.parts[].text."""
     url = f"{GEMINI_API}/{GEMINI_MODEL}:generateContent?key={key}"
     body = json.dumps({
         "contents": [{"parts": [{"text": prompt}]}],
@@ -161,12 +179,19 @@ def call_gemini(prompt, key, tries=2):
                 url, data=body,
                 headers={**UA, "Content-Type": "application/json"},
             )
-            with urllib.request.urlopen(req, timeout=180) as r:
+            with urllib.request.urlopen(req, timeout=240) as r:
                 data = json.loads(r.read().decode())
-            return data["candidates"][0]["content"]["parts"][0]["text"]
+            parts = data["candidates"][0]["content"].get("parts") or []
+            text = "".join(p.get("text", "") for p in parts).strip()
+            if text:
+                return text
+            last = "gemini returned no text parts"
         except Exception as e:
             last = e
-            time.sleep(4)
+            code = str(e)
+            # transient: 429/5xx -> exponential backoff with growth
+            wait = 6 * (i + 1) if ("503" in code or "429" in code) else 4
+            time.sleep(wait)
     raise RuntimeError(f"gemini failed: {last}")
 
 
