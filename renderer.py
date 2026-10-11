@@ -51,6 +51,7 @@ def esc(text):
 def segment_filter(idx, caption):
     """Ken Burns + caption filtergraph for one segment."""
     if KEN_BURNS:
+        up_w, up_h = WIDTH * 2, HEIGHT * 2
         # zoompan: slow zoom in on even shots, out on odd — gentle variety
         direction = "zoom+0.0006" if idx % 2 == 0 else \
             "if(lte(zoom,1.0),1.0,max(1.001,zoom-0.0006))"
@@ -60,7 +61,11 @@ def segment_filter(idx, caption):
             f"d={FPS * 60}:s={WIDTH}x{HEIGHT}:fps={FPS}"
         )
         parts = [
-            f"scale={WIDTH * 2}:{HEIGHT * 2}",   # upscale first = smoother Ken Burns
+            # flux-1-schnell emits square images: fill the vertical frame by
+            # cover-scaling then center-cropping (never stretch), at 2x for
+            # smoother Ken Burns.
+            f"scale={up_w}:{up_h}:force_original_aspect_ratio=increase",
+            f"crop={up_w}:{up_h}",
             z,
             "format=yuv420p",
         ]
@@ -112,7 +117,9 @@ def make_segment(shot, seg_path, pad_silence=0.6):
         raise RuntimeError(f"renderer: unreadable audio {aud}")
     total = dur + pad_silence
 
-    aresample = f"anullsrc=channel_layout=stereo:sample_rate={AUDIO_RATE}"
+    aresample = (
+        f"anullsrc=channel_layout=stereo:sample_rate={AUDIO_RATE}"
+    )
     cmd = [
         "ffmpeg", "-y", "-loglevel", "error",
         "-loop", "1", "-i", img,
@@ -149,7 +156,8 @@ def concat_segments(seg_paths, out_path):
 
 def render_episode(episode_dir):
     """All shots -> final episode mp4 in EPISODES_DIR. Resumable."""
-    with open(os.path.join(episode_dir, "shotlist.json")) as f:
+    shotlist_path = os.path.join(episode_dir, "shotlist.json")
+    with open(shotlist_path) as f:
         shots = json.load(f)
     with open(os.path.join(episode_dir, "script.json")) as f:
         script = json.load(f)
