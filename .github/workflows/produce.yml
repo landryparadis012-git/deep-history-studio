@@ -3,7 +3,7 @@ name: Deep History Studio
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 6 * * *"   # daily 06:00 UTC
+    - cron: "0 6 * * *"
 
 permissions:
   contents: write
@@ -21,21 +21,25 @@ jobs:
           python-version: "3.11"
 
       - name: Install deps
-        run: pip install -r requirements.txt
-
-      - name: ffmpeg check
-        run: ffmpeg -version | head -1
+        run: |
+          set -o pipefail
+          pip install -r requirements.txt 2>&1 | tee install.log && true
+          test ${PIPESTATUS[0]} -eq 0
 
       - name: Write (research + script)
         id: write
-        run: python pipeline.py write
+        run: |
+          set -o pipefail
+          python pipeline.py write 2>&1 | tee write.log
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Produce (images + narration + render)
         id: produce
-        run: python pipeline.py produce
+        run: |
+          set -o pipefail
+          python pipeline.py produce 2>&1 | tee produce.log
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -44,7 +48,9 @@ jobs:
       - name: Notify (Telegram + hub)
         id: notify
         if: success()
-        run: python pipeline.py notify
+        run: |
+          set -o pipefail
+          python pipeline.py notify 2>&1 | tee notify.log
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -68,25 +74,55 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Failure report to Telegram
+      - name: Always save logs as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-logs
+          path: |
+            install.log
+            write.log
+            produce.log
+            notify.log
+          if-no-files-found: ignore
+          retention-days: 30
+
+      - name: Failure report to Telegram (real traceback)
         if: failure()
         run: |
           python - << 'PYEOF'
           import os, json, urllib.request
-          tok = os.environ["TELEGRAM_BOT_TOKEN"]
-          chat = os.environ["TELEGRAM_CHAT_ID"]
-          text = (
-              "🧱 DEEP HISTORY STUDIO FAILED — "
-              "open the Actions log for the real error:\n"
-              "${{ github.server_url }}/${{ github.repository }}"
-              "/actions/runs/${{ github.run_id }}"
-          )
+          tok = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+          if tok.lower().startswith("bot"):
+              tok = tok[3:]
+          chat = os.environ.get("TELEGRAM_CHAT_ID", "")
+
+          step = "unknown step"
+          for name, oc in [("write", "${{ steps.write.outcome }}"),
+                           ("produce", "${{ steps.produce.outcome }}"),
+                           ("notify", "${{ steps.notify.outcome }}")]:
+              if oc == "failure":
+                  step = name
+                  break
+
+          log_file = f"{step}.log"
+          log_tail = ""
+          if os.path.exists(log_file):
+              with open(log_file, errors="replace") as f:
+                  log_tail = f.read()[-3000:]
+          if not log_tail:
+              log_tail = "(log not found — download the run-logs artifact)"
+
+          text = f"🧱 DEEP HISTORY STUDIO FAILED at step: {step}\nLog tail:\n{log_tail}"[:4000]
           req = urllib.request.Request(
               f"https://api.telegram.org/bot{tok}/sendMessage",
               data=json.dumps({"chat_id": chat, "text": text}).encode(),
               headers={"Content-Type": "application/json"},
           )
-          urllib.request.urlopen(req)
+          try:
+              urllib.request.urlopen(req, timeout=30)
+          except Exception as e:
+              print(f"telegram report failed (non-fatal): {e}")
           PYEOF
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
