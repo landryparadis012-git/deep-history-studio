@@ -10,7 +10,7 @@ import os
 import subprocess
 
 from config import (
-    WIDTH, HEIGHT, FPS, KEN_BURNS, VIDEO_BITRATE, AUDIO_BITRATE,
+    WIDTH, HEIGHT, FPS, KEN_BURNS, AUDIO_BITRATE,
     CAPTIONS, CAPTION_MAX_CHARS, CAPTION_FONT, CAPTION_FONTSIZE,
     EPISODES_DIR,
 )
@@ -48,20 +48,28 @@ def esc(text):
                 .replace("'", "\u2019").replace("%", "\\%"))
 
 
-def segment_filter(n_beats_total, idx, caption):
+def segment_filter(idx, caption):
     """Ken Burns + caption filtergraph for one segment."""
-    # zoompan: slow zoom in on even shots, out on odd — gentle variety
-    direction = "zoom+0.0006" if idx % 2 == 0 else "if(lte(zoom,1.0),1.0,max(1.001,zoom-0.0006))"
-    z = (
-        f"zoompan=z='{direction}':"
-        f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
-        f"d={FPS * 60}:s={WIDTH}x{HEIGHT}:fps={FPS}"
-    )
-    parts = [
-        f"scale={WIDTH * 2}:{HEIGHT * 2}",   # upscale first = smoother Ken Burns
-        z,
-        "format=yuv420p",
-    ]
+    if KEN_BURNS:
+        # zoompan: slow zoom in on even shots, out on odd — gentle variety
+        direction = "zoom+0.0006" if idx % 2 == 0 else \
+            "if(lte(zoom,1.0),1.0,max(1.001,zoom-0.0006))"
+        z = (
+            f"zoompan=z='{direction}':"
+            f"x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':"
+            f"d={FPS * 60}:s={WIDTH}x{HEIGHT}:fps={FPS}"
+        )
+        parts = [
+            f"scale={WIDTH * 2}:{HEIGHT * 2}",   # upscale first = smoother Ken Burns
+            z,
+            "format=yuv420p",
+        ]
+    else:
+        parts = [
+            f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=increase",
+            f"crop={WIDTH}:{HEIGHT}",
+            "format=yuv420p",
+        ]
     if CAPTIONS and caption:
         cap = esc(wrap_caption(caption))
         if cap:
@@ -72,6 +80,18 @@ def segment_filter(n_beats_total, idx, caption):
                 f"x=(w-text_w)/2:y=h-180:line_spacing=8"
             )
     return ",".join(parts)
+
+
+def probe_audio_duration(path):
+    p = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=noprint_wrappers=1:nokey=1", path],
+        capture_output=True, text=True,
+    )
+    try:
+        return float(p.stdout.strip())
+    except ValueError:
+        return 0.0
 
 
 def make_segment(shot, seg_path, pad_silence=0.6):
@@ -87,79 +107,87 @@ def make_segment(shot, seg_path, pad_silence=0.6):
     if os.path.exists(seg_path):
         return  # idempotent
 
-    # measure narration duration
-    p = subprocess.run(
-        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
-         "-of", "default=noprint_wrappers=1:nokey=1", aud],
-        capture_output=True, text=True,
-    )
-    try:
-        dur = float(p.stdout.strip())
-    except ValueError:
-        dur = 5.0
-    total = max(2.5, dur + pad_silence)  # minimum on-screen time per shot
+    dur = probe_audio_duration(aud)
+    if dur <= 0:
+        raise RuntimeError(f"renderer: unreadable audio {aud}")
+    total = dur + pad_silence
 
-    vf = segment_filter(0, idx, shot.get("caption", ""))
+    aresample = f"anullsrc=channel_layout=stereo:sample_rate={AUDIO_RATE}"
     cmd = [
-        "ffmpeg", "-y",
+        "ffmpeg", "-y", "-loglevel", "error",
         "-loop", "1", "-i", img,
         "-i", aud,
+        "-f", "lavfi", "-i", aresample,
+        "-t", f"{total:.3f}",
         "-filter_complex",
-        f"[0:v]{vf}[v];[1:a]apad=pad_dur={pad_silence},aresample={AUDIO_RATE}[a]",
+        f"[0:v]{segment_filter(idx, shot.get('caption', ''))}[v];"
+        f"[1:a]apad,aresample={AUDIO_RATE}[a1];"
+        f"[a1][2:a]amix=inputs=2:duration=first:dropout_transition=0[a]",
         "-map", "[v]", "-map", "[a]",
-        "-t", f"{total:.2f}",
-        "-r", str(FPS),
-        "-c:v", "libx264", "-preset", "medium", "-b:v", VIDEO_BITRATE,
+        "-c:v", "libx264", "-preset", "medium", "-crf", "20",
         "-c:a", "aac", "-b:a", AUDIO_BITRATE,
-        "-pix_fmt", "yuv420p",
-        "-shortest",
+        "-r", str(FPS),
         seg_path,
     ]
     run(cmd)
+    print(f"[renderer] seg {idx}: {total:.1f}s")
 
 
 def concat_segments(seg_paths, out_path):
-    """Concat demuxer with re-encode — safest across mixed segment durations."""
-    lst = os.path.join(os.path.dirname(out_path), "concat.txt")
-    with open(lst, "w") as f:
-        for sp in seg_paths:
-            f.write(f"file '{os.path.abspath(sp)}'\n")
+    """Losslessly concat same-format segments via the concat demuxer."""
+    list_path = out_path + ".txt"
+    with open(list_path, "w") as f:
+        for p in seg_paths:
+            f.write(f"file '{os.path.abspath(p)}'\n")
     run([
-        "ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst,
-        "-c:v", "libx264", "-preset", "medium", "-b:v", VIDEO_BITRATE,
-        "-c:a", "aac", "-b:a", AUDIO_BITRATE,
-        "-pix_fmt", "yuv420p", "-r", str(FPS),
-        "-movflags", "+faststart",
-        out_path,
+        "ffmpeg", "-y", "-loglevel", "error",
+        "-f", "concat", "-safe", "0", "-i", list_path,
+        "-c", "copy", out_path,
     ])
-    os.remove(lst)
+    os.remove(list_path)
 
 
 def render_episode(episode_dir):
-    """shots.json -> segments -> final episode mp4. Returns final path."""
-    shots_path = os.path.join(episode_dir, "shots.json")
-    with open(shots_path) as f:
+    """All shots -> final episode mp4 in EPISODES_DIR. Resumable."""
+    with open(os.path.join(episode_dir, "shotlist.json")) as f:
         shots = json.load(f)
-    if not shots:
-        raise RuntimeError("renderer: empty shotlist")
+    with open(os.path.join(episode_dir, "script.json")) as f:
+        script = json.load(f)
+    flat = []
+    for ch in script["chapters"]:
+        for beat in ch["beats"]:
+            flat.append(beat.get("caption", ""))
+    for shot in shots:
+        shot.setdefault("caption", flat[shot["index"] - 1])
 
     seg_dir = os.path.join(episode_dir, "segments")
     os.makedirs(seg_dir, exist_ok=True)
-    seg_paths = []
-    for s in shots:
-        seg_path = os.path.join(seg_dir, f"seg_{s['index']:03d}.mp4")
-        make_segment(s, seg_path)
-        seg_paths.append(seg_path)
 
-    os.makedirs(EPISODES_DIR, exist_ok=True)
-    final = os.path.join(EPISODES_DIR, f"episode_{os.path.basename(os.path.normpath(episode_dir))}.mp4")
+    seg_paths = []
+    for shot in shots:
+        seg = os.path.join(seg_dir, f"seg_{shot['index']:03d}.mp4")
+        make_segment(shot, seg)
+        seg_paths.append(seg)
+
+    final = os.path.join(
+        EPISODES_DIR,
+        f"episode_{os.path.basename(os.path.normpath(episode_dir))}.mp4",
+    )
     concat_segments(seg_paths, final)
 
-    # report final size + duration
     p = subprocess.run(
         ["ffprobe", "-v", "error", "-show_entries", "format=duration,size",
          "-of", "default=noprint_wrappers=1", final],
         capture_output=True, text=True,
     )
-    print(f"[renderer] final: {final}\n[renderer] {p.stdout.strip()}")
+    print(f"[renderer] final: {final}")
+    print(f"[renderer] {p.stdout.strip()}")
     return final
+
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) < 2:
+        print("usage: python renderer.py <episode_dir>")
+        raise SystemExit(1)
+    render_episode(sys.argv[1])
