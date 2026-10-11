@@ -268,8 +268,9 @@ def write_script(topic, keys, episode_dir, force=False):
         )
 
     prompt = writer_prompt(topic, digest)
-    s = None
+
     # Groq chain first, Gemini fallback
+    s = None
     for model in GROQ_MODELS:
         key = keys.get("groq", "")
         if not key:
