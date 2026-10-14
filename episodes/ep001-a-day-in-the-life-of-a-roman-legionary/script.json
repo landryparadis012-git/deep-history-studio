@@ -1,0 +1,189 @@
+{
+ "title": "A Day in the Life of a Roman Legionary",
+ "description": "Explore the routine of a Roman legionary from recruitment to retirement. Sources: https://en.wikipedia.org/wiki/Legionary, https://en.wikipedia.org/wiki/Roman_legion, https://en.wikipedia.org/wiki/Imperial_Roman_army, https://en.wikipedia.org/wiki/Monty_Python%27s_Life_of_Brian",
+ "hashtags": [
+  "#history"
+ ],
+ "chapters": [
+  {
+   "chapter_title": "Morning on the March",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "I stir before sunrise, the camp still cloaked in mist. The night guard's soft clank of armor fades as I roll out of my straw pallet, ready for the day's first drill.",
+     "caption": "Dawn breaks on the camp",
+     "image_prompt": "stick figure legionary standing, sunrise line behind"
+    },
+    {
+     "narration": "The centurion's bark cuts the cold air: formation, weapons, armor. We line up in ten ranks, each century of eighty men matching the glint of steel on the horizon.",
+     "caption": "Centurion calls roll call",
+     "image_prompt": "centurion figure with baton, rows of tiny figures behind"
+    },
+    {
+     "narration": "Our gladius rests at my side, two pila on my belt. The short sword is for close combat, the javelins for the opening volley that shatters enemy lines.",
+     "caption": "Gladius and pila ready",
+     "image_prompt": "figure holding short sword, two spears at waist"
+    },
+    {
+     "narration": "We practice the testudo, shields overlapping like a living roof. The drill is relentless, but it teaches us to move as one, protecting each other from arrows.",
+     "caption": "Building the testudo",
+     "image_prompt": "three figures overlapped with rectangular shields"
+    },
+    {
+     "narration": "After drills, we share a simple porridge. The cook, a veteran immunes, adds herbs for flavor, reminding us that even soldiers need nourishment.",
+     "caption": "Breakfast in the mess",
+     "image_prompt": "figure holding bowl, another figure stirring pot"
+    },
+    {
+     "narration": "Before the sun climbs, I check my equipment: leather straps, bronze fittings, the iron greaves that protect my shins. A legionary's gear is his identity.",
+     "caption": "Inspecting gear",
+     "image_prompt": "figure examining armor pieces laid on ground"
+    }
+   ]
+  },
+  {
+   "chapter_title": "The Legionary's Role in the Empire",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "Legionaries were citizen soldiers, recruited up to age forty\u2011five, serving a standard twenty\u2011five\u2011year term after Augustus professionalized the army.",
+     "caption": "Citizens become legionaries",
+     "image_prompt": "three stick figures with Roman helmets"
+    },
+    {
+     "narration": "A full legion during the Principate numbered about 5,200 men, organized into ten cohorts, the first cohort double\u2011strength, forming the backbone of Roman heavy infantry.",
+     "caption": "Legion size and structure",
+     "image_prompt": "rectangle divided into ten sections, one larger"
+    },
+    {
+     "narration": "Beyond combat, legionaries built roads, bridges, walls, and even public baths, turning soldiers into engineers, surveyors, and artisans across the empire.",
+     "caption": "Soldiers as builders",
+     "image_prompt": "figure with trowel, another with a measuring rod"
+    },
+    {
+     "narration": "They acted as police, judges, and tax collectors, filling the administrative vacuum in provinces where civil bureaucracy was thin.",
+     "caption": "Legionaries keep the peace",
+     "image_prompt": "figure holding a staff, another handing out coins"
+    },
+    {
+     "narration": "When stationed far from Italy, veterans received land grants or cash, integrating Roman culture into local societies and spawning towns that grew into cities.",
+     "caption": "Veterans settle lands",
+     "image_prompt": "figure planting a flag on a plot of land"
+    },
+    {
+     "narration": "Over time, recruitment broadened, pay increased under emperors like Septimius Severus, and discipline waned, leading to the legionary\u2019s gradual decline by the fourth century.",
+     "caption": "Rise and fall of the legion",
+     "image_prompt": "figure rising then slumping, arrow indicating decline"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Midday Labor and Patrol",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "At noon the sun beats down on the fort\u2019s outer wall. I join a squad of immunes tasked with repairing a cracked stone segment.",
+     "caption": "Repairing the wall",
+     "image_prompt": "figure with hammer, another holding stone"
+    },
+    {
+     "narration": "Our tools are simple: chisels, wooden mallets, and a rope pulley. The work is hard, but the wall protects the empire\u2019s frontiers.",
+     "caption": "Simple tools, big task",
+     "image_prompt": "figure using chisel on stone"
+    },
+    {
+     "narration": "After the masonry, we patrol the nearby road, watching for bandits or stray livestock that could damage the newly laid paving stones.",
+     "caption": "Road patrol begins",
+     "image_prompt": "two figures walking, road line beneath"
+    },
+    {
+     "narration": "A farmer approaches, grateful for the safe passage his carts now enjoy. He offers a loaf of barley bread as thanks, a small but valued token.",
+     "caption": "Farmer\u2019s gratitude",
+     "image_prompt": "figure handing bread to legionary"
+    },
+    {
+     "narration": "We return to the barracks, the heat lingering on our backs. The centurion orders a brief rest before the afternoon\u2019s training drills resume.",
+     "caption": "Rest before drills",
+     "image_prompt": "figures sitting on ground, shaded by a line"
+    },
+    {
+     "narration": "During the break I write a letter home, though the law forbids marriage for most legionaries. Still, I hope my words reach my mother in Italy.",
+     "caption": "Writing home",
+     "image_prompt": "figure with quill and scroll"
+    }
+   ]
+  },
+  {
+   "chapter_title": "The Imperial Framework",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "Under Augustus, the army was split evenly: 25 legions and 250 auxiliary units, totaling roughly 250,000 men, a balance that sustained Rome\u2019s borders.",
+     "caption": "Augustan army balance",
+     "image_prompt": "two columns of stick figures, labeled legion and aux"
+    },
+    {
+     "narration": "Legionaries swore the sacramentum to the emperor alone, a reform that shifted loyalty from individual generals to the state itself.",
+     "caption": "Oath to the emperor",
+     "image_prompt": "figure raising hand toward a crown symbol"
+    },
+    {
+     "narration": "Pay was standardized, and a veteran\u2019s discharge bonus replaced land grants when public land ran out, ensuring soldiers remained financially motivated.",
+     "caption": "Standardized pay",
+     "image_prompt": "figure holding coin bag"
+    },
+    {
+     "narration": "Mutinies in AD 14 showed how sensitive soldiers were to service length; Augustus\u2019s earlier 16\u2011year term had been raised to 20 years, sparking unrest.",
+     "caption": "Mutiny on the Rhine",
+     "image_prompt": "figure with angry expression, others behind"
+    },
+    {
+     "narration": "By the 3rd century, cavalry grew vital, and the heavy infantry of the classic legion faded, replaced by lighter troops using darts instead of pila.",
+     "caption": "Shift to cavalry",
+     "image_prompt": "figure on horse, another with dart"
+    },
+    {
+     "narration": "In the 4th century, limitanei border legions shrank to 1,000\u20111,500 men, marking the end of the massive, tightly\u2011disciplined legions that once dominated Europe.",
+     "caption": "Smaller border legions",
+     "image_prompt": "small group of figures behind a wall"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Evening Reflections",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "The sun sets behind the distant hills; I sit by the campfire, the crackle echoing the day's labor and the distant clank of distant troops.",
+     "caption": "Sunset at camp",
+     "image_prompt": "figure seated, fire between two sticks"
+    },
+    {
+     "narration": "Veterans share stories of battles in Britannia, Dacia, and Africa, reminding us that each legionary carries the empire\u2019s frontier on his shoulders.",
+     "caption": "Stories of distant wars",
+     "image_prompt": "figure gesturing, speech bubble with map outline"
+    },
+    {
+     "narration": "I think of my future twenty\u2011five years from now, when I might receive a land parcel or cash, perhaps becoming a local magistrate in this province.",
+     "caption": "Dreams of retirement",
+     "image_prompt": "figure looking at a plot of land"
+    },
+    {
+     "narration": "The discipline that once seemed rigid now feels like a bond with my comrades; we are more than soldiers, we are the hands that build Rome.",
+     "caption": "Bond of the legion",
+     "image_prompt": "two figures shaking arms"
+    },
+    {
+     "narration": "Night deepens, and the camp settles into quiet. I close my eyes, hearing the distant hum of a Roman road being paved by my brothers.",
+     "caption": "Night settles in",
+     "image_prompt": "figure lying down, stars above"
+    },
+    {
+     "narration": "Tomorrow will bring another dawn, another march, another chance to leave a stone of Rome\u2019s legacy wherever my boots tread.",
+     "caption": "Tomorrow\u2019s march awaits",
+     "image_prompt": "figure with boot stepping forward"
+    }
+   ]
+  }
+ ]
+}

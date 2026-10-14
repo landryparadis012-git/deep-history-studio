@@ -1,0 +1,272 @@
+[
+ {
+  "index": 1,
+  "chapter_title": "Morning on the March",
+  "mode": "first_person",
+  "caption": "Dawn breaks on the camp",
+  "image_prompt": "stick figure legionary standing, sunrise line behind",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_001.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_001.mp3"
+ },
+ {
+  "index": 2,
+  "chapter_title": "Morning on the March",
+  "mode": "first_person",
+  "caption": "Centurion calls roll call",
+  "image_prompt": "centurion figure with baton, rows of tiny figures behind",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_002.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_002.mp3"
+ },
+ {
+  "index": 3,
+  "chapter_title": "Morning on the March",
+  "mode": "first_person",
+  "caption": "Gladius and pila ready",
+  "image_prompt": "figure holding short sword, two spears at waist",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_003.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_003.mp3"
+ },
+ {
+  "index": 4,
+  "chapter_title": "Morning on the March",
+  "mode": "first_person",
+  "caption": "Building the testudo",
+  "image_prompt": "three figures overlapped with rectangular shields",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_004.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_004.mp3"
+ },
+ {
+  "index": 5,
+  "chapter_title": "Morning on the March",
+  "mode": "first_person",
+  "caption": "Breakfast in the mess",
+  "image_prompt": "figure holding bowl, another figure stirring pot",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_005.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_005.mp3"
+ },
+ {
+  "index": 6,
+  "chapter_title": "Morning on the March",
+  "mode": "first_person",
+  "caption": "Inspecting gear",
+  "image_prompt": "figure examining armor pieces laid on ground",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_006.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_006.mp3"
+ },
+ {
+  "index": 7,
+  "chapter_title": "The Legionary's Role in the Empire",
+  "mode": "overview",
+  "caption": "Citizens become legionaries",
+  "image_prompt": "three stick figures with Roman helmets",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_007.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_007.mp3"
+ },
+ {
+  "index": 8,
+  "chapter_title": "The Legionary's Role in the Empire",
+  "mode": "overview",
+  "caption": "Legion size and structure",
+  "image_prompt": "rectangle divided into ten sections, one larger",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_008.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_008.mp3"
+ },
+ {
+  "index": 9,
+  "chapter_title": "The Legionary's Role in the Empire",
+  "mode": "overview",
+  "caption": "Soldiers as builders",
+  "image_prompt": "figure with trowel, another with a measuring rod",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_009.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_009.mp3"
+ },
+ {
+  "index": 10,
+  "chapter_title": "The Legionary's Role in the Empire",
+  "mode": "overview",
+  "caption": "Legionaries keep the peace",
+  "image_prompt": "figure holding a staff, another handing out coins",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_010.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_010.mp3"
+ },
+ {
+  "index": 11,
+  "chapter_title": "The Legionary's Role in the Empire",
+  "mode": "overview",
+  "caption": "Veterans settle lands",
+  "image_prompt": "figure planting a flag on a plot of land",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_011.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_011.mp3"
+ },
+ {
+  "index": 12,
+  "chapter_title": "The Legionary's Role in the Empire",
+  "mode": "overview",
+  "caption": "Rise and fall of the legion",
+  "image_prompt": "figure rising then slumping, arrow indicating decline",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_012.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_012.mp3"
+ },
+ {
+  "index": 13,
+  "chapter_title": "Midday Labor and Patrol",
+  "mode": "first_person",
+  "caption": "Repairing the wall",
+  "image_prompt": "figure with hammer, another holding stone",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_013.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_013.mp3"
+ },
+ {
+  "index": 14,
+  "chapter_title": "Midday Labor and Patrol",
+  "mode": "first_person",
+  "caption": "Simple tools, big task",
+  "image_prompt": "figure using chisel on stone",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_014.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_014.mp3"
+ },
+ {
+  "index": 15,
+  "chapter_title": "Midday Labor and Patrol",
+  "mode": "first_person",
+  "caption": "Road patrol begins",
+  "image_prompt": "two figures walking, road line beneath",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_015.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_015.mp3"
+ },
+ {
+  "index": 16,
+  "chapter_title": "Midday Labor and Patrol",
+  "mode": "first_person",
+  "caption": "Farmer\u2019s gratitude",
+  "image_prompt": "figure handing bread to legionary",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_016.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_016.mp3"
+ },
+ {
+  "index": 17,
+  "chapter_title": "Midday Labor and Patrol",
+  "mode": "first_person",
+  "caption": "Rest before drills",
+  "image_prompt": "figures sitting on ground, shaded by a line",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_017.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_017.mp3"
+ },
+ {
+  "index": 18,
+  "chapter_title": "Midday Labor and Patrol",
+  "mode": "first_person",
+  "caption": "Writing home",
+  "image_prompt": "figure with quill and scroll",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_018.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_018.mp3"
+ },
+ {
+  "index": 19,
+  "chapter_title": "The Imperial Framework",
+  "mode": "overview",
+  "caption": "Augustan army balance",
+  "image_prompt": "two columns of stick figures, labeled legion and aux",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_019.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_019.mp3"
+ },
+ {
+  "index": 20,
+  "chapter_title": "The Imperial Framework",
+  "mode": "overview",
+  "caption": "Oath to the emperor",
+  "image_prompt": "figure raising hand toward a crown symbol",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_020.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_020.mp3"
+ },
+ {
+  "index": 21,
+  "chapter_title": "The Imperial Framework",
+  "mode": "overview",
+  "caption": "Standardized pay",
+  "image_prompt": "figure holding coin bag",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_021.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_021.mp3"
+ },
+ {
+  "index": 22,
+  "chapter_title": "The Imperial Framework",
+  "mode": "overview",
+  "caption": "Mutiny on the Rhine",
+  "image_prompt": "figure with angry expression, others behind",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_022.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_022.mp3"
+ },
+ {
+  "index": 23,
+  "chapter_title": "The Imperial Framework",
+  "mode": "overview",
+  "caption": "Shift to cavalry",
+  "image_prompt": "figure on horse, another with dart",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_023.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_023.mp3"
+ },
+ {
+  "index": 24,
+  "chapter_title": "The Imperial Framework",
+  "mode": "overview",
+  "caption": "Smaller border legions",
+  "image_prompt": "small group of figures behind a wall",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_024.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_024.mp3"
+ },
+ {
+  "index": 25,
+  "chapter_title": "Evening Reflections",
+  "mode": "first_person",
+  "caption": "Sunset at camp",
+  "image_prompt": "figure seated, fire between two sticks",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_025.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_025.mp3"
+ },
+ {
+  "index": 26,
+  "chapter_title": "Evening Reflections",
+  "mode": "first_person",
+  "caption": "Stories of distant wars",
+  "image_prompt": "figure gesturing, speech bubble with map outline",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_026.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_026.mp3"
+ },
+ {
+  "index": 27,
+  "chapter_title": "Evening Reflections",
+  "mode": "first_person",
+  "caption": "Dreams of retirement",
+  "image_prompt": "figure looking at a plot of land",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_027.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_027.mp3"
+ },
+ {
+  "index": 28,
+  "chapter_title": "Evening Reflections",
+  "mode": "first_person",
+  "caption": "Bond of the legion",
+  "image_prompt": "two figures shaking arms",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_028.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_028.mp3"
+ },
+ {
+  "index": 29,
+  "chapter_title": "Evening Reflections",
+  "mode": "first_person",
+  "caption": "Night settles in",
+  "image_prompt": "figure lying down, stars above",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_029.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_029.mp3"
+ },
+ {
+  "index": 30,
+  "chapter_title": "Evening Reflections",
+  "mode": "first_person",
+  "caption": "Tomorrow\u2019s march awaits",
+  "image_prompt": "figure with boot stepping forward",
+  "image": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/images/img_030.png",
+  "audio": "episodes/ep001-a-day-in-the-life-of-a-roman-legionary/audio/aud_030.mp3"
+ }
+]
