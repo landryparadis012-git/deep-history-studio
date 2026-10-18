@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 6 * * *"
+  # OpsHub triggers this studio with a repository_dispatch.
+  # client_payload: {topic, reason}  — topic overrides the queue for that run.
+  repository_dispatch:
+    types: [opshub.produce, opshub.run]
 
 permissions:
   contents: write
@@ -54,6 +58,7 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          HUB_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
 
       - name: Produce (images + narration + render)
         id: produce
@@ -74,6 +79,10 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          HUB_URL: ${{ secrets.HUB_URL }}
+          OPSHUB_URL: ${{ secrets.OPSHUB_URL }}
+          HUB_WEBHOOK_SECRET: ${{ secrets.HUB_WEBHOOK_SECRET }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
 
       - name: Artifact fallback if Telegram failed
         if: always() && steps.notify.outcome != 'success'

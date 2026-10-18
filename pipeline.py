@@ -15,10 +15,12 @@ import sys
 import time
 import urllib.request
 
+import hub
 from config import (
     STATE_PATH, TOPICS_PATH, EPISODES_DIR, TELEGRAM_MB_LIMIT, HUB_EMIT,
-    STUDIO_NAME, ENGINE_VERSION,
+    STUDIO_NAME, ENGINE_VERSION, LANGUAGE,
 )
+LANGUAGE_ECHO = LANGUAGE
 from researcher import research_topic, slugify
 from writer import write_script, word_count
 from illustrator import illustrate_episode, write_shotlist, DailyLimitError
@@ -135,38 +137,30 @@ def tg(method, payload):
         return json.loads(r.read().decode())
 
 
-def tok_for_bot():
-    tok = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    if tok.lower().startswith("bot"):
-        tok = tok[3:].strip()
-    return tok
-
-
 def send_video(path, caption):
     size_mb = os.path.getsize(path) / (1024 * 1024)
     if size_mb > TELEGRAM_MB_LIMIT:
         raise RuntimeError(
             f"video is {size_mb:.1f}MB > {TELEGRAM_MB_LIMIT}MB limit"
         )
-    tok = tok_for_bot()
     boundary = f"----dhs{int(time.time())}"
-    bb = boundary.encode()
+    boundary_bytes = boundary.encode()
     fields = [("chat_id", os.environ.get("TELEGRAM_CHAT_ID", "")),
               ("caption", caption)]
     with open(path, "rb") as f:
         content = b""
         for name, val in fields:
-            content += b"--" + bb + b"\r\n"
+            content += b"--" + boundary_bytes + b"\r\n"
             content += f'Content-Disposition: form-data; name="{name}"\r\n\r\n'.encode()
             content += (val or "").encode() + b"\r\n"
-        content += b"--" + bb + b"\r\n"
+        content += b"--" + boundary_bytes + b"\r\n"
         content += (b'Content-Disposition: form-data; name="video"; '
                     b'filename="episode.mp4"\r\n'
                     b"Content-Type: video/mp4\r\n\r\n")
         content += f.read() + b"\r\n"
-        content += b"--" + bb + b"--\r\n"
+        content += b"--" + boundary_bytes + b"--\r\n"
     req = urllib.request.Request(
-        f"https://api.telegram.org/bot{tok}/sendVideo",
+        f"https://api.telegram.org/bot{tok_for_bot()}/sendVideo",
         data=content,
         headers={
             "Content-Type": f"multipart/form-data; boundary={boundary}",
@@ -184,33 +178,33 @@ def send_message(text):
     })
 
 
+def tok_for_bot():
+    tok = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    if tok.lower().startswith("bot"):
+        tok = tok[3:].strip()
+    return tok
+
+
 # ---------------- hub ----------------
 
 def hub_emit(event, payload):
+    """One contract for every studio: hub.py signs and posts schema_version 1,
+    falling back to the legacy unsigned /emit shape on older hubs."""
     if not HUB_EMIT:
-        return
-    hub_url = os.environ.get("OPSHUB_URL", "").strip()
-    if not hub_url:
-        return
-    try:
-        req = urllib.request.Request(
-            hub_url.rstrip("/") + "/emit",
-            data=json.dumps({"event": event, **payload}).encode(),
-            headers={**UA, "Content-Type": "application/json"},
-        )
-        with urllib.request.urlopen(req, timeout=15) as r:
-            r.read()
-        print(f"[hub] emitted {event}")
-    except Exception as e:
-        print(f"[hub] emit failed (non-fatal): {e}")
+        return False
+    body = dict(payload)
+    series = (body.pop("series_id", None) or body.get("topic")
+              or body.get("title") or "series")
+    return hub.emit(event, series_id=series, **body)
 
 
 # ---------------- commands ----------------
 
 def cmd_write(args):
     state = load_state()
-    if args.topic:
-        topic = args.topic
+    topic = args.topic or hub.trigger_topic()
+    if topic:
+        print(f"[pipeline] topic from {hub.why()}: {topic}")
     else:
         _, pending = load_topics()
         topic = pending[0]
@@ -238,6 +232,8 @@ def cmd_produce(args):
     ep_dir, state = resolve_episode_dir(args)
     if not ep_dir:
         raise RuntimeError("produce: unknown episode (run write first)")
+    ep_id = os.path.basename(ep_dir)
+    topic = state.get("current_topic")
 
     with open(os.path.join(ep_dir, "script.json")) as f:
         script = json.load(f)
@@ -285,6 +281,14 @@ def cmd_notify(args):
     except Exception as e:
         print(f"[pipeline] Telegram delivery failed: {e}")
 
+    hub.emit_series_state(
+        series_id=topic or ep_id,
+        episode_number=int(state.get("episode_counter", 0) or 0),
+        finished=False,
+        title=script.get("title", topic),
+        engine_version=ENGINE_VERSION,
+        language=LANGUAGE_ECHO,
+    )
     hub_emit("content.episode_ready", {
         "studio": STUDIO_NAME,
         "engine": ENGINE_VERSION,
@@ -294,6 +298,7 @@ def cmd_notify(args):
         "description": script.get("description", ""),
         "hashtags": script.get("hashtags", []),
         "file": final,
+        "duration_min": round(script.get("duration_sec", 0) / 60, 1),
     })
     return delivered
 
