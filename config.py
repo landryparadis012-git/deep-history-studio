@@ -6,6 +6,7 @@ Every creative knob lives here. Change values freely; the engine reads them.
 # ---------------- identity ----------------
 STUDIO_NAME = "Deep History Studio"
 ENGINE_VERSION = "v1"
+LANGUAGE = "English"
 
 # ---------------- voice (edge-tts) ----------------
 # Chill documentary narrator. Swap freely:
