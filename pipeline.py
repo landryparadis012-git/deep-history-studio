@@ -251,6 +251,15 @@ def cmd_produce(args):
         print("[pipeline] resume after UTC midnight: just re-run the workflow")
         sys.exit(42)  # distinct exit code: quota stop, not a bug
 
+    # Queue advance: the episode exists on disk — retire the topic and bump the
+    # counter HERE (not in notify) so a later notify hiccup can't cause a re-run
+    # that regenerates the same episode.
+    state["episode_counter"] = int(state.get("episode_counter", 0) or 0) + 1
+    save_state(state)
+    if topic:
+        mark_done(topic)
+        print(f"[pipeline] topic retired: {topic} | counter -> {state['episode_counter']}")
+
     print(f"[pipeline] produce complete: {final}")
     return ep_dir, final
 

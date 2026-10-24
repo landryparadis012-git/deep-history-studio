@@ -93,7 +93,9 @@ jobs:
           retention-days: 30
 
       - name: Commit memory (only on success)
-        if: success()
+        # Commit as soon as produce succeeded — a later notify failure must not
+        # lose the topic retirement, or the next run repeats this episode.
+        if: always() && steps.produce.outcome == 'success'
         run: |
           git config user.name "deep-history-studio"
           git config user.email "actions@github.com"
