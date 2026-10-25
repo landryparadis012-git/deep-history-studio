@@ -1,0 +1,189 @@
+{
+ "title": "What the First Humans Ate",
+ "description": "A calm walk through the diet of our Paleolithic ancestors, based on Wikipedia sources. Sources: https://en.wikipedia.org/wiki/Paleolithic, https://en.wikipedia.org/wiki/Hunter-gatherer, https://en.wikipedia.org/wiki/Cro-Magnon, https://en.wikipedia.org/wiki/Human",
+ "hashtags": [
+  "#history"
+ ],
+ "chapters": [
+  {
+   "chapter_title": "Morning on the Steppe",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "I wake before dawn, the air still cool, and hear the rustle of grasses around our camp. Our small band has already gathered firewood for the day ahead.",
+     "caption": "Dawn on the steppe",
+     "image_prompt": "stick figure holding a stick, small fire beside"
+    },
+    {
+     "narration": "Our first task is to collect edible plants\u2014nuts, seeds, and wild berries that grew in the surrounding woodlands. We know which ones are safe from generations of observation.",
+     "caption": "Gathering plants",
+     "image_prompt": "stick figure bending, basket of berries"
+    },
+    {
+     "narration": "While some of us gather, others keep watch for animal tracks. The Paleolithic people lived in small societies, moving as bands that relied on both hunting and gathering.",
+     "caption": "Band on the move",
+     "image_prompt": "two stick figures, one pointing at footprints"
+    },
+    {
+     "narration": "We carry simple stone tools, knapped from flint, to cut and scrape. Wood, bone, and even leather are fashioned into useful implements, though they rarely survive for us to see.",
+     "caption": "Stone tools ready",
+     "image_prompt": "stick figure holding a sharp stone"
+    },
+    {
+     "narration": "The diet is balanced: plant foods give us roughage and vitamins, while the fat from animal meat supplies essential energy for our active lives.",
+     "caption": "Balanced diet",
+     "image_prompt": "stick figure with plant and meat icons"
+    },
+    {
+     "narration": "Even before the fire, we would eat raw meat or fish when we could find it, but now we roast a small piece over the flame, savoring the new taste.",
+     "caption": "Cooking meat",
+     "image_prompt": "stick figure turning meat on a fire"
+    }
+   ]
+  },
+  {
+   "chapter_title": "The Broad Spectrum Revolution",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "Around eighty thousand years ago, some hunter\u2011gatherer bands began to specialize, focusing on a narrower set of resources while expanding the tools they used.",
+     "caption": "Specialized bands",
+     "image_prompt": "two stick figures with fishing net and spear"
+    },
+    {
+     "narration": "They crafted fishing hooks, nets, and bone harpoons, allowing them to exploit rivers, lakes, and coastal waters for a reliable source of protein and fat.",
+     "caption": "Fishing innovations",
+     "image_prompt": "stick figure with hook pulling fish"
+    },
+    {
+     "narration": "In richer environments, such as the Pacific Northwest or the Osipovka culture sites, groups could stay in one place year\u2011round, feeding on abundant fish stocks.",
+     "caption": "Sedentary fishers",
+     "image_prompt": "stick figure beside river with fish"
+    },
+    {
+     "narration": "Elsewhere, on the mammoth steppes of Siberia, people hunted large game\u2014mammoths, bison, and woolly rhinoceroses\u2014using spears, spear\u2011throwers, and coordinated drives.",
+     "caption": "Mammoth hunt",
+     "image_prompt": "stick figure with spear, large outline of mammoth"
+    },
+    {
+     "narration": "These varied diets illustrate the flexibility of hunter\u2011gatherers: wherever water, plants, or game existed, humans adapted their meals accordingly.",
+     "caption": "Dietary flexibility",
+     "image_prompt": "stick figure with plant, fish, and meat icons"
+    },
+    {
+     "narration": "The broad spectrum approach meant no single food dominated; instead, groups consumed a mosaic of resources, balancing calories, nutrients, and seasonal availability.",
+     "caption": "Mosaic diet",
+     "image_prompt": "stick figure with puzzle pieces of food"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Scavenging vs. Hunting",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "Sometimes we find a carcass left by a predator. In the Lower Paleolithic, many scholars argue that early humans relied heavily on scavenging before mastering the hunt.",
+     "caption": "Scavenging find",
+     "image_prompt": "stick figure beside animal carcass"
+    },
+    {
+     "narration": "We strip the meat with stone blades, taking what we can before the bones are claimed by vultures or other scavengers.",
+     "caption": "Stripping meat",
+     "image_prompt": "stick figure using stone to cut meat"
+    },
+    {
+     "narration": "In forested areas, we also collect seafood, eggs, nuts, and fruits, showing that early diets were not limited to large game alone.",
+     "caption": "Forest bounty",
+     "image_prompt": "stick figure with egg and nut"
+    },
+    {
+     "narration": "When the opportunity arises\u2014say a trapped animal\u2014we use spears or simple traps to secure fresh meat, turning a chance kill into a shared feast.",
+     "caption": "Fresh kill",
+     "image_prompt": "stick figure with spear next to fallen animal"
+    },
+    {
+     "narration": "Our ability to adapt, whether hunting, fishing, or scavenging, kept our bands alive through the glacial cycles that marked the Pleistocene.",
+     "caption": "Adapting to climate",
+     "image_prompt": "stick figure under snowflake"
+    },
+    {
+     "narration": "Even today, the echo of that flexibility lives on in the varied dishes we prepare, a reminder of our deep\u2011time relationship with the land.",
+     "caption": "Legacy today",
+     "image_prompt": "stick figure cooking modern pot"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Tools of the Table",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "Stone tools are the hallmark of the Paleolithic, but early humans also fashioned wooden spears, bone needles, and leather straps to aid food preparation.",
+     "caption": "Beyond stone",
+     "image_prompt": "stick figure holding wooden spear"
+    },
+    {
+     "narration": "Bone harpoons appear around eighty thousand years ago, indicating a growing reliance on aquatic resources, especially in coastal sites like Blombos Cave.",
+     "caption": "Bone harpoons",
+     "image_prompt": "stick figure with harpoon"
+    },
+    {
+     "narration": "Engraving tools and drilling implements suggest that people not only ate but also crafted ornaments, perhaps using dyed plant fibres for clothing.",
+     "caption": "Ornamental work",
+     "image_prompt": "stick figure with bead"
+    },
+    {
+     "narration": "Temporary huts made of branches and hides provided shelter while groups moved, and larger structures of mammoth bones show the ingenuity of Upper Paleolithic peoples.",
+     "caption": "Mammoth huts",
+     "image_prompt": "stick figure beside bone wall"
+    },
+    {
+     "narration": "These technologies allowed humans to process tougher foods, extract marrow, and preserve meat, extending the usefulness of each kill.",
+     "caption": "Processing meat",
+     "image_prompt": "stick figure cracking bone"
+    },
+    {
+     "narration": "The cumulative knowledge of tool use\u2014what archaeologists call the ratchet effect\u2014made each generation more efficient at turning raw resources into meals.",
+     "caption": "Ratchet effect",
+     "image_prompt": "stick figure with upward arrow"
+    }
+   ]
+  },
+  {
+   "chapter_title": "From Bands to Modern Tables",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "I sit by a fire now, thinking of the thousands of years before me when small bands roamed the world, each meal a negotiation with nature.",
+     "caption": "Reflecting by fire",
+     "image_prompt": "stick figure sitting by fire"
+    },
+    {
+     "narration": "Our ancestors ate what the land offered\u2014roots, berries, fish, and the occasional mammoth\u2014balancing calories, fat, and roughage to survive.",
+     "caption": "Ancient menu",
+     "image_prompt": "stick figure with mixed food icons"
+    },
+    {
+     "narration": "The shift from pure hunting to broad\u2011spectrum foraging, from scavenging to specialized fishing, shows a remarkable adaptability that defines us.",
+     "caption": "Adaptive shift",
+     "image_prompt": "stick figure with arrows pointing to plant and fish"
+    },
+    {
+     "narration": "Today, our plates are filled with foods from every continent, many of them cultivated, yet the instinct to seek variety remains.",
+     "caption": "Global plates",
+     "image_prompt": "stick figure with globe and plate"
+    },
+    {
+     "narration": "Understanding the first humans\u2019 diet reminds us that nutrition is a story of environment, technology, and culture intertwined.",
+     "caption": "Nutrition story",
+     "image_prompt": "stick figure with book and food"
+    },
+    {
+     "narration": "As the fire dims, I wonder: what will future generations consider \u2018natural\u2019 food, and how will they look back on our choices?",
+     "caption": "Future reflections",
+     "image_prompt": "stick figure looking at distant horizon"
+    }
+   ]
+  }
+ ]
+}

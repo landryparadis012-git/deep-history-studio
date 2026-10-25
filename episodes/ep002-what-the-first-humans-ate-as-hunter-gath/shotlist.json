@@ -1,0 +1,272 @@
+[
+ {
+  "index": 1,
+  "chapter_title": "Morning on the Steppe",
+  "mode": "first_person",
+  "caption": "Dawn on the steppe",
+  "image_prompt": "stick figure holding a stick, small fire beside",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_001.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_001.mp3"
+ },
+ {
+  "index": 2,
+  "chapter_title": "Morning on the Steppe",
+  "mode": "first_person",
+  "caption": "Gathering plants",
+  "image_prompt": "stick figure bending, basket of berries",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_002.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_002.mp3"
+ },
+ {
+  "index": 3,
+  "chapter_title": "Morning on the Steppe",
+  "mode": "first_person",
+  "caption": "Band on the move",
+  "image_prompt": "two stick figures, one pointing at footprints",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_003.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_003.mp3"
+ },
+ {
+  "index": 4,
+  "chapter_title": "Morning on the Steppe",
+  "mode": "first_person",
+  "caption": "Stone tools ready",
+  "image_prompt": "stick figure holding a sharp stone",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_004.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_004.mp3"
+ },
+ {
+  "index": 5,
+  "chapter_title": "Morning on the Steppe",
+  "mode": "first_person",
+  "caption": "Balanced diet",
+  "image_prompt": "stick figure with plant and meat icons",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_005.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_005.mp3"
+ },
+ {
+  "index": 6,
+  "chapter_title": "Morning on the Steppe",
+  "mode": "first_person",
+  "caption": "Cooking meat",
+  "image_prompt": "stick figure turning meat on a fire",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_006.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_006.mp3"
+ },
+ {
+  "index": 7,
+  "chapter_title": "The Broad Spectrum Revolution",
+  "mode": "overview",
+  "caption": "Specialized bands",
+  "image_prompt": "two stick figures with fishing net and spear",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_007.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_007.mp3"
+ },
+ {
+  "index": 8,
+  "chapter_title": "The Broad Spectrum Revolution",
+  "mode": "overview",
+  "caption": "Fishing innovations",
+  "image_prompt": "stick figure with hook pulling fish",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_008.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_008.mp3"
+ },
+ {
+  "index": 9,
+  "chapter_title": "The Broad Spectrum Revolution",
+  "mode": "overview",
+  "caption": "Sedentary fishers",
+  "image_prompt": "stick figure beside river with fish",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_009.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_009.mp3"
+ },
+ {
+  "index": 10,
+  "chapter_title": "The Broad Spectrum Revolution",
+  "mode": "overview",
+  "caption": "Mammoth hunt",
+  "image_prompt": "stick figure with spear, large outline of mammoth",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_010.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_010.mp3"
+ },
+ {
+  "index": 11,
+  "chapter_title": "The Broad Spectrum Revolution",
+  "mode": "overview",
+  "caption": "Dietary flexibility",
+  "image_prompt": "stick figure with plant, fish, and meat icons",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_011.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_011.mp3"
+ },
+ {
+  "index": 12,
+  "chapter_title": "The Broad Spectrum Revolution",
+  "mode": "overview",
+  "caption": "Mosaic diet",
+  "image_prompt": "stick figure with puzzle pieces of food",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_012.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_012.mp3"
+ },
+ {
+  "index": 13,
+  "chapter_title": "Scavenging vs. Hunting",
+  "mode": "first_person",
+  "caption": "Scavenging find",
+  "image_prompt": "stick figure beside animal carcass",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_013.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_013.mp3"
+ },
+ {
+  "index": 14,
+  "chapter_title": "Scavenging vs. Hunting",
+  "mode": "first_person",
+  "caption": "Stripping meat",
+  "image_prompt": "stick figure using stone to cut meat",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_014.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_014.mp3"
+ },
+ {
+  "index": 15,
+  "chapter_title": "Scavenging vs. Hunting",
+  "mode": "first_person",
+  "caption": "Forest bounty",
+  "image_prompt": "stick figure with egg and nut",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_015.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_015.mp3"
+ },
+ {
+  "index": 16,
+  "chapter_title": "Scavenging vs. Hunting",
+  "mode": "first_person",
+  "caption": "Fresh kill",
+  "image_prompt": "stick figure with spear next to fallen animal",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_016.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_016.mp3"
+ },
+ {
+  "index": 17,
+  "chapter_title": "Scavenging vs. Hunting",
+  "mode": "first_person",
+  "caption": "Adapting to climate",
+  "image_prompt": "stick figure under snowflake",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_017.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_017.mp3"
+ },
+ {
+  "index": 18,
+  "chapter_title": "Scavenging vs. Hunting",
+  "mode": "first_person",
+  "caption": "Legacy today",
+  "image_prompt": "stick figure cooking modern pot",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_018.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_018.mp3"
+ },
+ {
+  "index": 19,
+  "chapter_title": "Tools of the Table",
+  "mode": "overview",
+  "caption": "Beyond stone",
+  "image_prompt": "stick figure holding wooden spear",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_019.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_019.mp3"
+ },
+ {
+  "index": 20,
+  "chapter_title": "Tools of the Table",
+  "mode": "overview",
+  "caption": "Bone harpoons",
+  "image_prompt": "stick figure with harpoon",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_020.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_020.mp3"
+ },
+ {
+  "index": 21,
+  "chapter_title": "Tools of the Table",
+  "mode": "overview",
+  "caption": "Ornamental work",
+  "image_prompt": "stick figure with bead",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_021.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_021.mp3"
+ },
+ {
+  "index": 22,
+  "chapter_title": "Tools of the Table",
+  "mode": "overview",
+  "caption": "Mammoth huts",
+  "image_prompt": "stick figure beside bone wall",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_022.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_022.mp3"
+ },
+ {
+  "index": 23,
+  "chapter_title": "Tools of the Table",
+  "mode": "overview",
+  "caption": "Processing meat",
+  "image_prompt": "stick figure cracking bone",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_023.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_023.mp3"
+ },
+ {
+  "index": 24,
+  "chapter_title": "Tools of the Table",
+  "mode": "overview",
+  "caption": "Ratchet effect",
+  "image_prompt": "stick figure with upward arrow",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_024.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_024.mp3"
+ },
+ {
+  "index": 25,
+  "chapter_title": "From Bands to Modern Tables",
+  "mode": "first_person",
+  "caption": "Reflecting by fire",
+  "image_prompt": "stick figure sitting by fire",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_025.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_025.mp3"
+ },
+ {
+  "index": 26,
+  "chapter_title": "From Bands to Modern Tables",
+  "mode": "first_person",
+  "caption": "Ancient menu",
+  "image_prompt": "stick figure with mixed food icons",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_026.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_026.mp3"
+ },
+ {
+  "index": 27,
+  "chapter_title": "From Bands to Modern Tables",
+  "mode": "first_person",
+  "caption": "Adaptive shift",
+  "image_prompt": "stick figure with arrows pointing to plant and fish",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_027.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_027.mp3"
+ },
+ {
+  "index": 28,
+  "chapter_title": "From Bands to Modern Tables",
+  "mode": "first_person",
+  "caption": "Global plates",
+  "image_prompt": "stick figure with globe and plate",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_028.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_028.mp3"
+ },
+ {
+  "index": 29,
+  "chapter_title": "From Bands to Modern Tables",
+  "mode": "first_person",
+  "caption": "Nutrition story",
+  "image_prompt": "stick figure with book and food",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_029.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_029.mp3"
+ },
+ {
+  "index": 30,
+  "chapter_title": "From Bands to Modern Tables",
+  "mode": "first_person",
+  "caption": "Future reflections",
+  "image_prompt": "stick figure looking at distant horizon",
+  "image": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/images/img_030.png",
+  "audio": "episodes/ep002-what-the-first-humans-ate-as-hunter-gath/audio/aud_030.mp3"
+ }
+]
