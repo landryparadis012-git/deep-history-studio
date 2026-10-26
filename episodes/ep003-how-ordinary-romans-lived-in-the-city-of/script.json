@@ -1,0 +1,189 @@
+{
+ "title": "A Day in Ancient Rome: Lives of Ordinary Citizens",
+ "description": "A calm walk through daily life in Rome, based on Wikipedia articles: Roman Empire, Ancient Rome, Roman Republic, Roman people. Sources: https://en.wikipedia.org/wiki/Roman_Empire, https://en.wikipedia.org/wiki/Ancient_Rome, https://en.wikipedia.org/wiki/Roman_Republic, https://en.wikipedia.org/wiki/Roman_people",
+ "hashtags": [
+  "#history"
+ ],
+ "chapters": [
+  {
+   "chapter_title": "Morning on the Aventine",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "I rise before dawn, the city still cloaked in a thin mist. The rooster on the roof of my insula calls me awake, and I slip on my simple sandals. My family gathers for a modest breakfast of bread, cheese, and olives, the staples of a Roman plebeian's diet.",
+     "caption": "Dawn on the Aventine",
+     "image_prompt": "stick figure standing by a low roof, rooster perched, another figure holding a loaf"
+    },
+    {
+     "narration": "The streets are narrow and bustling as I step onto the cobbles. Water flows from a nearby aqueduct, and I pause at a public fountain to fill a clay jar. Fresh water, a gift of Roman engineering, makes daily chores possible.",
+     "caption": "Filling a jar at the fountain",
+     "image_prompt": "stick figure bending at a fountain, another figure holding a jar"
+    },
+    {
+     "narration": "I head to the market, a maze of stalls under the shadow of the Forum. Vendors shout the price of garum, figs, and fresh fish. I barter for a handful of lentils, essential for the stew I will cook for dinner.",
+     "caption": "Market bargaining",
+     "image_prompt": "stick figure with a basket, another figure with a price tag"
+    },
+    {
+     "narration": "Work begins at the workshop of my father, a carpenter on the Subura. He carves wooden beams for a new insula, using tools passed down through generations. The rhythm of the hammer echoes the pulse of the city.",
+     "caption": "Carpentry at work",
+     "image_prompt": "stick figure with hammer, another with a wooden plank"
+    },
+    {
+     "narration": "At midday, we pause for a quick meal of puls (a spiced porridge) and fresh fruit. The sun climbs high, and the city hums with the chatter of slaves, merchants, and soldiers. Even a brief rest feels like a shared ritual.",
+     "caption": "Midday pause",
+     "image_prompt": "stick figure sitting on a bench, another figure holding a bowl"
+    },
+    {
+     "narration": "The afternoon brings a visit to the local bathhouse, where steam rises from the caldarium. I wash away the dust of the day, chatting with neighbors about the latest news from the Senate. The baths are both hygiene and social hub.",
+     "caption": "Bathhouse steam",
+     "image_prompt": "stick figure in a steam cloud, another figure waving"
+    }
+   ]
+  },
+  {
+   "chapter_title": "The City\u2019s Structure and Citizenship",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "Rome\u2019s urban fabric grew from modest hills to a sprawling metropolis that dominated the Mediterranean. By the first century BC, the city controlled a territory stretching from North Africa to the British Isles, a fact that shaped daily life for its inhabitants.",
+     "caption": "Rome\u2019s vast reach",
+     "image_prompt": "stick figure standing on a hill, lines radiating outward"
+    },
+    {
+     "narration": "The population swelled to millions, making Rome one of the ancient world\u2019s largest cities. Citizens, known as\u202fR\u014dm\u0101n\u012b, originally came from the Latin heartland, but over centuries the Senate extended citizenship to Italians and, later, to most free peoples of the empire.",
+     "caption": "Expanding citizenship",
+     "image_prompt": "stick figure with a scroll, another figure receiving a badge"
+    },
+    {
+     "narration": "Legal status mattered: citizens could vote, own land, and serve in the legions, while non\u2011citizens faced restrictions. The Antonine Constitution of AD\u202f212 finally granted citizenship to all free inhabitants, cementing a shared Roman identity across diverse cultures.",
+     "caption": "Antonine Constitution",
+     "image_prompt": "stick figure holding a tablet, another figure with open arms"
+    },
+    {
+     "narration": "The city\u2019s layout reflected its political hierarchy. The Forum, with its temples and basilicas, was the heart of public life, while the Subura housed the poorer crowds. Wealthier families lived in spacious domus on the Palatine, complete with private courtyards.",
+     "caption": "Forum vs. Subura",
+     "image_prompt": "stick figure in a grand building, another figure in a cramped house"
+    },
+    {
+     "narration": "Infrastructure tied the city together. Aqueducts supplied clean water, roads linked neighborhoods, and the famous Appian Way stretched outward, enabling trade and military movement. These engineering feats underpinned the daily rhythm of ordinary Romans.",
+     "caption": "Roman engineering",
+     "image_prompt": "stick figure pointing to an aqueduct, another figure on a road"
+    },
+    {
+     "narration": "Despite the empire\u2019s grandeur, most Romans lived modestly, relying on public amenities like markets, baths, and grain distributions (the annona). The state\u2019s stability during the Pax Romana allowed such services to flourish for the many.",
+     "caption": "Pax Romana benefits",
+     "image_prompt": "stick figure receiving grain, another figure in a bath"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Work and Trade in the Streets",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "After the baths, I head to the taverna where I sell my carpentry wares. The street is alive with artisans: blacksmiths hammering iron, potters shaping clay, and bakers pulling fresh loaves from communal ovens.",
+     "caption": "Street of artisans",
+     "image_prompt": "stick figure with a wooden box, another with a hammer"
+    },
+    {
+     "narration": "Trade is a two\u2011way street. I import pine from Gaul for furniture, while exporting olive oil to the provinces. Roman merchants travel the empire\u2019s roads and seas, carrying goods that sustain the city\u2019s appetite.",
+     "caption": "Merchants on the move",
+     "image_prompt": "stick figure with a cart, another figure with a barrel"
+    },
+    {
+     "narration": "Slaves assist in many workshops, performing the most labor\u2011intensive tasks. Their presence is a reminder of the empire\u2019s reliance on conquered peoples, whose labor built both monuments and modest homes alike.",
+     "caption": "Slaves at work",
+     "image_prompt": "stick figure carrying a load, another figure with a rope"
+    },
+    {
+     "narration": "Taxes are collected in grain and coin, funding the legionaries who protect Rome\u2019s borders. The sight of a centurion marching past the market reminds us that military might underwrites everyday commerce.",
+     "caption": "Centurion passing",
+     "image_prompt": "stick figure in armor, another figure holding coins"
+    },
+    {
+     "narration": "Even the simplest vendor participates in a wider network. A fishmonger on the Tiber sells catches that traveled from the Adriatic, showing how the empire\u2019s reach touches every stall.",
+     "caption": "Fish from afar",
+     "image_prompt": "stick figure with a fish, another figure with a wave line"
+    },
+    {
+     "narration": "When dusk falls, I close my stall and walk home beneath lantern light. The city\u2019s rhythm slows, but the hum of distant workshops continues, a testament to Rome\u2019s ceaseless productivity.",
+     "caption": "Evening stroll",
+     "image_prompt": "stick figure walking, lantern glowing"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Leisure, Religion, and Family",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "Family life centered on the domus, where the paterfamilias presided over meals and rituals. Ancestors were honored at the household shrine (lararium), linking daily chores to the gods\u2019 favor.",
+     "caption": "Household shrine",
+     "image_prompt": "stick figure kneeling before a small altar, another figure offering incense"
+    },
+    {
+     "narration": "Public festivals punctuated the calendar. The Ludi, held in honor of Jupiter, featured chariot races in the Circus Maximus, drawing crowds from every class.",
+     "caption": "Ludi in the Circus",
+     "image_prompt": "stick figure on a chariot, another figure cheering"
+    },
+    {
+     "narration": "Theaters offered drama, while gladiatorial games in the Colosseum displayed both cruelty and communal spectacle. Even the poorest could afford a seat, as admission was often free or subsidized by the emperor.",
+     "caption": "Gladiators fight",
+     "image_prompt": "stick figure with a sword, another figure with a shield"
+    },
+    {
+     "narration": "Religion blended state and personal devotion. Temples to Jupiter, Mars, and countless household deities dotted the city, reinforcing a shared cultural identity across the empire\u2019s diversity.",
+     "caption": "Temples abound",
+     "image_prompt": "stick figure with a laurel wreath, temple silhouette behind"
+    },
+    {
+     "narration": "Education, though limited for many, began in the home. Children learned to read Latin, recite poetry, and memorize law, preparing them for civic participation if they were citizens.",
+     "caption": "Learning at home",
+     "image_prompt": "stick figure with a scroll, another figure pointing"
+    },
+    {
+     "narration": "Even in leisure, Roman law regulated behavior. Sumptuary rules tried to curb excess, while public order was maintained by the vigiles, night watchmen who patrolled the streets.",
+     "caption": "Vigiles patrol",
+     "image_prompt": "stick figure with a lantern, another figure with a baton"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Evening Reflections on Rome\u2019s Legacy",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "As night settles, I sit on my rooftop, the city\u2019s lights flickering like distant stars. I think of the roads that stretch beyond the hills, carrying the voices of countless peoples into our shared destiny.",
+     "caption": "Rooftop contemplation",
+     "image_prompt": "stick figure seated, city lights below"
+    },
+    {
+     "narration": "Rome\u2019s power has endured through wars, reforms, and emperors. Yet it is the ordinary lives\u2014our meals, our work, our prayers\u2014that truly built the empire\u2019s heart.",
+     "caption": "Ordinary hearts",
+     "image_prompt": "stick figure with a heart, another figure holding a wheat stalk"
+    },
+    {
+     "narration": "The Pax Romana gave us peace, allowing markets to thrive and families to grow. In that stability, we found the space to imagine a future beyond the marble arches.",
+     "caption": "Peaceful prosperity",
+     "image_prompt": "stick figure with olive branch, another figure looking ahead"
+    },
+    {
+     "narration": "Our identity as Romans is not just a legal status; it is a blend of language, customs, and a willingness to adopt what the world offers. This flexibility made Rome a \u2018mongrel nation\u2019, as ancient writers noted.",
+     "caption": "Mongrel nation",
+     "image_prompt": "stick figure with mixed symbols, another figure smiling"
+    },
+    {
+     "narration": "When the next generation steps onto the same cobbles, they will inherit both the grandeur of our monuments and the humble routines of daily life. That mixture defines what it means to be Roman.",
+     "caption": "Legacy passed on",
+     "image_prompt": "stick figure handing a torch to another"
+    },
+    {
+     "narration": "I close my eyes, hearing the distant echo of a market vendor\u2019s call, the splash of the Tiber, and the steady beat of Rome\u2019s pulse\u2014a reminder that history lives in every ordinary moment.",
+     "caption": "Echoes of Rome",
+     "image_prompt": "stick figure with closed eyes, sound lines around"
+    }
+   ]
+  }
+ ]
+}

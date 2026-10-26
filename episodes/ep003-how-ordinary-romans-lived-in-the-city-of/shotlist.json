@@ -1,0 +1,272 @@
+[
+ {
+  "index": 1,
+  "chapter_title": "Morning on the Aventine",
+  "mode": "first_person",
+  "caption": "Dawn on the Aventine",
+  "image_prompt": "stick figure standing by a low roof, rooster perched, another figure holding a loaf",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_001.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_001.mp3"
+ },
+ {
+  "index": 2,
+  "chapter_title": "Morning on the Aventine",
+  "mode": "first_person",
+  "caption": "Filling a jar at the fountain",
+  "image_prompt": "stick figure bending at a fountain, another figure holding a jar",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_002.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_002.mp3"
+ },
+ {
+  "index": 3,
+  "chapter_title": "Morning on the Aventine",
+  "mode": "first_person",
+  "caption": "Market bargaining",
+  "image_prompt": "stick figure with a basket, another figure with a price tag",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_003.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_003.mp3"
+ },
+ {
+  "index": 4,
+  "chapter_title": "Morning on the Aventine",
+  "mode": "first_person",
+  "caption": "Carpentry at work",
+  "image_prompt": "stick figure with hammer, another with a wooden plank",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_004.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_004.mp3"
+ },
+ {
+  "index": 5,
+  "chapter_title": "Morning on the Aventine",
+  "mode": "first_person",
+  "caption": "Midday pause",
+  "image_prompt": "stick figure sitting on a bench, another figure holding a bowl",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_005.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_005.mp3"
+ },
+ {
+  "index": 6,
+  "chapter_title": "Morning on the Aventine",
+  "mode": "first_person",
+  "caption": "Bathhouse steam",
+  "image_prompt": "stick figure in a steam cloud, another figure waving",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_006.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_006.mp3"
+ },
+ {
+  "index": 7,
+  "chapter_title": "The City\u2019s Structure and Citizenship",
+  "mode": "overview",
+  "caption": "Rome\u2019s vast reach",
+  "image_prompt": "stick figure standing on a hill, lines radiating outward",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_007.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_007.mp3"
+ },
+ {
+  "index": 8,
+  "chapter_title": "The City\u2019s Structure and Citizenship",
+  "mode": "overview",
+  "caption": "Expanding citizenship",
+  "image_prompt": "stick figure with a scroll, another figure receiving a badge",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_008.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_008.mp3"
+ },
+ {
+  "index": 9,
+  "chapter_title": "The City\u2019s Structure and Citizenship",
+  "mode": "overview",
+  "caption": "Antonine Constitution",
+  "image_prompt": "stick figure holding a tablet, another figure with open arms",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_009.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_009.mp3"
+ },
+ {
+  "index": 10,
+  "chapter_title": "The City\u2019s Structure and Citizenship",
+  "mode": "overview",
+  "caption": "Forum vs. Subura",
+  "image_prompt": "stick figure in a grand building, another figure in a cramped house",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_010.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_010.mp3"
+ },
+ {
+  "index": 11,
+  "chapter_title": "The City\u2019s Structure and Citizenship",
+  "mode": "overview",
+  "caption": "Roman engineering",
+  "image_prompt": "stick figure pointing to an aqueduct, another figure on a road",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_011.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_011.mp3"
+ },
+ {
+  "index": 12,
+  "chapter_title": "The City\u2019s Structure and Citizenship",
+  "mode": "overview",
+  "caption": "Pax Romana benefits",
+  "image_prompt": "stick figure receiving grain, another figure in a bath",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_012.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_012.mp3"
+ },
+ {
+  "index": 13,
+  "chapter_title": "Work and Trade in the Streets",
+  "mode": "first_person",
+  "caption": "Street of artisans",
+  "image_prompt": "stick figure with a wooden box, another with a hammer",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_013.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_013.mp3"
+ },
+ {
+  "index": 14,
+  "chapter_title": "Work and Trade in the Streets",
+  "mode": "first_person",
+  "caption": "Merchants on the move",
+  "image_prompt": "stick figure with a cart, another figure with a barrel",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_014.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_014.mp3"
+ },
+ {
+  "index": 15,
+  "chapter_title": "Work and Trade in the Streets",
+  "mode": "first_person",
+  "caption": "Slaves at work",
+  "image_prompt": "stick figure carrying a load, another figure with a rope",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_015.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_015.mp3"
+ },
+ {
+  "index": 16,
+  "chapter_title": "Work and Trade in the Streets",
+  "mode": "first_person",
+  "caption": "Centurion passing",
+  "image_prompt": "stick figure in armor, another figure holding coins",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_016.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_016.mp3"
+ },
+ {
+  "index": 17,
+  "chapter_title": "Work and Trade in the Streets",
+  "mode": "first_person",
+  "caption": "Fish from afar",
+  "image_prompt": "stick figure with a fish, another figure with a wave line",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_017.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_017.mp3"
+ },
+ {
+  "index": 18,
+  "chapter_title": "Work and Trade in the Streets",
+  "mode": "first_person",
+  "caption": "Evening stroll",
+  "image_prompt": "stick figure walking, lantern glowing",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_018.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_018.mp3"
+ },
+ {
+  "index": 19,
+  "chapter_title": "Leisure, Religion, and Family",
+  "mode": "overview",
+  "caption": "Household shrine",
+  "image_prompt": "stick figure kneeling before a small altar, another figure offering incense",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_019.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_019.mp3"
+ },
+ {
+  "index": 20,
+  "chapter_title": "Leisure, Religion, and Family",
+  "mode": "overview",
+  "caption": "Ludi in the Circus",
+  "image_prompt": "stick figure on a chariot, another figure cheering",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_020.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_020.mp3"
+ },
+ {
+  "index": 21,
+  "chapter_title": "Leisure, Religion, and Family",
+  "mode": "overview",
+  "caption": "Gladiators fight",
+  "image_prompt": "stick figure with a sword, another figure with a shield",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_021.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_021.mp3"
+ },
+ {
+  "index": 22,
+  "chapter_title": "Leisure, Religion, and Family",
+  "mode": "overview",
+  "caption": "Temples abound",
+  "image_prompt": "stick figure with a laurel wreath, temple silhouette behind",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_022.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_022.mp3"
+ },
+ {
+  "index": 23,
+  "chapter_title": "Leisure, Religion, and Family",
+  "mode": "overview",
+  "caption": "Learning at home",
+  "image_prompt": "stick figure with a scroll, another figure pointing",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_023.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_023.mp3"
+ },
+ {
+  "index": 24,
+  "chapter_title": "Leisure, Religion, and Family",
+  "mode": "overview",
+  "caption": "Vigiles patrol",
+  "image_prompt": "stick figure with a lantern, another figure with a baton",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_024.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_024.mp3"
+ },
+ {
+  "index": 25,
+  "chapter_title": "Evening Reflections on Rome\u2019s Legacy",
+  "mode": "first_person",
+  "caption": "Rooftop contemplation",
+  "image_prompt": "stick figure seated, city lights below",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_025.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_025.mp3"
+ },
+ {
+  "index": 26,
+  "chapter_title": "Evening Reflections on Rome\u2019s Legacy",
+  "mode": "first_person",
+  "caption": "Ordinary hearts",
+  "image_prompt": "stick figure with a heart, another figure holding a wheat stalk",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_026.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_026.mp3"
+ },
+ {
+  "index": 27,
+  "chapter_title": "Evening Reflections on Rome\u2019s Legacy",
+  "mode": "first_person",
+  "caption": "Peaceful prosperity",
+  "image_prompt": "stick figure with olive branch, another figure looking ahead",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_027.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_027.mp3"
+ },
+ {
+  "index": 28,
+  "chapter_title": "Evening Reflections on Rome\u2019s Legacy",
+  "mode": "first_person",
+  "caption": "Mongrel nation",
+  "image_prompt": "stick figure with mixed symbols, another figure smiling",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_028.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_028.mp3"
+ },
+ {
+  "index": 29,
+  "chapter_title": "Evening Reflections on Rome\u2019s Legacy",
+  "mode": "first_person",
+  "caption": "Legacy passed on",
+  "image_prompt": "stick figure handing a torch to another",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_029.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_029.mp3"
+ },
+ {
+  "index": 30,
+  "chapter_title": "Evening Reflections on Rome\u2019s Legacy",
+  "mode": "first_person",
+  "caption": "Echoes of Rome",
+  "image_prompt": "stick figure with closed eyes, sound lines around",
+  "image": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/images/img_030.png",
+  "audio": "episodes/ep003-how-ordinary-romans-lived-in-the-city-of/audio/aud_030.mp3"
+ }
+]
