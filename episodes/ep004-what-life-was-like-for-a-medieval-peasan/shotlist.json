@@ -1,0 +1,380 @@
+[
+ {
+  "index": 1,
+  "chapter_title": "Morning at the Hearth",
+  "mode": "first_person",
+  "caption": "Dawn in a peasant home",
+  "image_prompt": "stick figure pulling a blanket off a simple hut, fire pit inside",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_001.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_001.mp3"
+ },
+ {
+  "index": 2,
+  "chapter_title": "Morning at the Hearth",
+  "mode": "first_person",
+  "caption": "Stoking the fire",
+  "image_prompt": "two stick figures near a hearth, one covering coals",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_002.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_002.mp3"
+ },
+ {
+  "index": 3,
+  "chapter_title": "Morning at the Hearth",
+  "mode": "first_person",
+  "caption": "Preparing cooking pots",
+  "image_prompt": "stick figure holding a pot, another holding a clay jar",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_003.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_003.mp3"
+ },
+ {
+  "index": 4,
+  "chapter_title": "Morning at the Hearth",
+  "mode": "first_person",
+  "caption": "Fields beyond the house",
+  "image_prompt": "stick figure looking over a simple field with a fence",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_004.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_004.mp3"
+ },
+ {
+  "index": 5,
+  "chapter_title": "Morning at the Hearth",
+  "mode": "first_person",
+  "caption": "Sweeping the hall",
+  "image_prompt": "stick figure with a broom near a low wall",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_005.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_005.mp3"
+ },
+ {
+  "index": 6,
+  "chapter_title": "Morning at the Hearth",
+  "mode": "first_person",
+  "caption": "Morning bread shared",
+  "image_prompt": "two stick figures sitting on a bench, passing a loaf",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_006.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_006.mp3"
+ },
+ {
+  "index": 7,
+  "chapter_title": "The Open Field System",
+  "mode": "overview",
+  "caption": "Open field strips",
+  "image_prompt": "stick figure with a plow beside parallel lines",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_007.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_007.mp3"
+ },
+ {
+  "index": 8,
+  "chapter_title": "The Open Field System",
+  "mode": "overview",
+  "caption": "Shared pastures",
+  "image_prompt": "two stick figures herding sheep in a shared area",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_008.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_008.mp3"
+ },
+ {
+  "index": 9,
+  "chapter_title": "The Open Field System",
+  "mode": "overview",
+  "caption": "Feudal obligations",
+  "image_prompt": "stick figure handing a sheaf to a taller figure",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_009.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_009.mp3"
+ },
+ {
+  "index": 10,
+  "chapter_title": "The Open Field System",
+  "mode": "overview",
+  "caption": "Post\u2011plague change",
+  "image_prompt": "stick figure standing beside a fence, looking at a lone field",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_010.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_010.mp3"
+ },
+ {
+  "index": 11,
+  "chapter_title": "The Open Field System",
+  "mode": "overview",
+  "caption": "Tenure types",
+  "image_prompt": "stick figure with a scroll next to a field",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_011.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_011.mp3"
+ },
+ {
+  "index": 12,
+  "chapter_title": "The Open Field System",
+  "mode": "overview",
+  "caption": "Coordinated planting",
+  "image_prompt": "two stick figures with plows on adjacent strips",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_012.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_012.mp3"
+ },
+ {
+  "index": 13,
+  "chapter_title": "Crafting and Cooking Inside",
+  "mode": "first_person",
+  "caption": "Using a brandreth",
+  "image_prompt": "stick figure placing a pot on a simple grate",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_013.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_013.mp3"
+ },
+ {
+  "index": 14,
+  "chapter_title": "Crafting and Cooking Inside",
+  "mode": "first_person",
+  "caption": "Home brewing ale",
+  "image_prompt": "stick figure pouring from a barrel",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_014.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_014.mp3"
+ },
+ {
+  "index": 15,
+  "chapter_title": "Crafting and Cooking Inside",
+  "mode": "first_person",
+  "caption": "Storing food",
+  "image_prompt": "stick figure stacking jars on a shelf",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_015.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_015.mp3"
+ },
+ {
+  "index": 16,
+  "chapter_title": "Crafting and Cooking Inside",
+  "mode": "first_person",
+  "caption": "Covering the fire",
+  "image_prompt": "stick figure placing a lid over coals",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_016.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_016.mp3"
+ },
+ {
+  "index": 17,
+  "chapter_title": "Crafting and Cooking Inside",
+  "mode": "first_person",
+  "caption": "Washing linens",
+  "image_prompt": "stick figure hanging cloth on a line",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_017.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_017.mp3"
+ },
+ {
+  "index": 18,
+  "chapter_title": "Crafting and Cooking Inside",
+  "mode": "first_person",
+  "caption": "Kitchen bench",
+  "image_prompt": "stick figure child stirring a pot on a bench",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_018.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_018.mp3"
+ },
+ {
+  "index": 19,
+  "chapter_title": "Social Structure and the Village",
+  "mode": "overview",
+  "caption": "Peasants dominate",
+  "image_prompt": "many stick figures clustered, few taller figures",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_019.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_019.mp3"
+ },
+ {
+  "index": 20,
+  "chapter_title": "Social Structure and the Village",
+  "mode": "overview",
+  "caption": "Three peasant classes",
+  "image_prompt": "three stick figures labeled slave, serf, free",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_020.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_020.mp3"
+ },
+ {
+  "index": 21,
+  "chapter_title": "Social Structure and the Village",
+  "mode": "overview",
+  "caption": "Customary tenure",
+  "image_prompt": "stick figure holding a small deed near a manor",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_021.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_021.mp3"
+ },
+ {
+  "index": 22,
+  "chapter_title": "Social Structure and the Village",
+  "mode": "overview",
+  "caption": "Village festivals",
+  "image_prompt": "stick figures around a simple cross",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_022.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_022.mp3"
+ },
+ {
+  "index": 23,
+  "chapter_title": "Social Structure and the Village",
+  "mode": "overview",
+  "caption": "Extended households",
+  "image_prompt": "several stick figures under one roof",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_023.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_023.mp3"
+ },
+ {
+  "index": 24,
+  "chapter_title": "Social Structure and the Village",
+  "mode": "overview",
+  "caption": "Manor justice",
+  "image_prompt": "stick figure lord with a gavel, peasants listening",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_024.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_024.mp3"
+ },
+ {
+  "index": 25,
+  "chapter_title": "Housing Across Regions",
+  "mode": "first_person",
+  "caption": "Kentish timber house",
+  "image_prompt": "stick figure beside a simple framed house",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_025.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_025.mp3"
+ },
+ {
+  "index": 26,
+  "chapter_title": "Housing Across Regions",
+  "mode": "first_person",
+  "caption": "Cruck construction",
+  "image_prompt": "stick figure under an A\u2011shaped roof",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_026.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_026.mp3"
+ },
+ {
+  "index": 27,
+  "chapter_title": "Housing Across Regions",
+  "mode": "first_person",
+  "caption": "Wattle walls",
+  "image_prompt": "stick figure tapping a wall, smoke rising",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_027.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_027.mp3"
+ },
+ {
+  "index": 28,
+  "chapter_title": "Housing Across Regions",
+  "mode": "first_person",
+  "caption": "No chimney needed",
+  "image_prompt": "stick figure looking up at thatch with smoke",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_028.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_028.mp3"
+ },
+ {
+  "index": 29,
+  "chapter_title": "Housing Across Regions",
+  "mode": "first_person",
+  "caption": "One\u2011room living",
+  "image_prompt": "stick figure with a cow inside a small house",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_029.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_029.mp3"
+ },
+ {
+  "index": 30,
+  "chapter_title": "Housing Across Regions",
+  "mode": "first_person",
+  "caption": "Enduring homes",
+  "image_prompt": "stick figure with a calendar beside a house",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_030.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_030.mp3"
+ },
+ {
+  "index": 31,
+  "chapter_title": "Work, Play, and Survival",
+  "mode": "overview",
+  "caption": "Relentless labor",
+  "image_prompt": "stick figure with a plow under a sun",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_031.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_031.mp3"
+ },
+ {
+  "index": 32,
+  "chapter_title": "Work, Play, and Survival",
+  "mode": "overview",
+  "caption": "Peasant pastimes",
+  "image_prompt": "two stick figures wrestling in a ring",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_032.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_032.mp3"
+ },
+ {
+  "index": 33,
+  "chapter_title": "Work, Play, and Survival",
+  "mode": "overview",
+  "caption": "Market exchange",
+  "image_prompt": "stick figure with a sack trading with another",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_033.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_033.mp3"
+ },
+ {
+  "index": 34,
+  "chapter_title": "Work, Play, and Survival",
+  "mode": "overview",
+  "caption": "Harvest risk",
+  "image_prompt": "stick figure looking at empty granary",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_034.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_034.mp3"
+ },
+ {
+  "index": 35,
+  "chapter_title": "Work, Play, and Survival",
+  "mode": "overview",
+  "caption": "Post\u2011plague shift",
+  "image_prompt": "stick figure holding a sign \u2018more land\u2019",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_035.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_035.mp3"
+ },
+ {
+  "index": 36,
+  "chapter_title": "Work, Play, and Survival",
+  "mode": "overview",
+  "caption": "Enclosure begins",
+  "image_prompt": "stick figure watching a fence rise",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_036.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_036.mp3"
+ },
+ {
+  "index": 37,
+  "chapter_title": "Legacy of the Medieval Peasant",
+  "mode": "first_person",
+  "caption": "Evening by the fire",
+  "image_prompt": "stick figure sitting near a low fire",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_037.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_037.mp3"
+ },
+ {
+  "index": 38,
+  "chapter_title": "Legacy of the Medieval Peasant",
+  "mode": "first_person",
+  "caption": "Huts become history",
+  "image_prompt": "stick figure pointing at ruins",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_038.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_038.mp3"
+ },
+ {
+  "index": 39,
+  "chapter_title": "Legacy of the Medieval Peasant",
+  "mode": "first_person",
+  "caption": "Cooperation echoes",
+  "image_prompt": "stick figures planting together",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_039.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_039.mp3"
+ },
+ {
+  "index": 40,
+  "chapter_title": "Legacy of the Medieval Peasant",
+  "mode": "first_person",
+  "caption": "From hearth to Enlightenment",
+  "image_prompt": "stick figure holding a candle above a book",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_040.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_040.mp3"
+ },
+ {
+  "index": 41,
+  "chapter_title": "Legacy of the Medieval Peasant",
+  "mode": "first_person",
+  "caption": "Peasants in pop culture",
+  "image_prompt": "stick figure with a game controller",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_041.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_041.mp3"
+ },
+ {
+  "index": 42,
+  "chapter_title": "Legacy of the Medieval Peasant",
+  "mode": "first_person",
+  "caption": "Remember their legacy",
+  "image_prompt": "stick figure looking at a distant thatch",
+  "image": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/images/img_042.png",
+  "audio": "episodes/ep004-what-life-was-like-for-a-medieval-peasan/audio/aud_042.mp3"
+ }
+]

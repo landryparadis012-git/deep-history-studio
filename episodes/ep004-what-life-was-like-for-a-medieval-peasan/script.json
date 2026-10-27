@@ -1,0 +1,261 @@
+{
+ "title": "A Day in the Life of a Medieval Peasant",
+ "description": "Explore daily life, homes, and work of medieval peasants. Sources: https://en.wikipedia.org/wiki/Peasant_homes_in_medieval_England, https://en.wikipedia.org/wiki/Peasant, https://en.wikipedia.org/wiki/Rustler_%28video_game%29, https://en.wikipedia.org/wiki/Medieval_household",
+ "hashtags": [
+  "#history"
+ ],
+ "chapters": [
+  {
+   "chapter_title": "Morning at the Hearth",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "I rise before dawn, the cold night still clinging to the walls of my one\u2011room house. The fire in the hearth smolders, a thin orange glow.",
+     "caption": "Dawn in a peasant home",
+     "image_prompt": "stick figure pulling a blanket off a simple hut, fire pit inside"
+    },
+    {
+     "narration": "My wife already stokes the fire, covering it with ash to keep the embers alive. Relighting would waste precious wood we can scarcely afford.",
+     "caption": "Stoking the fire",
+     "image_prompt": "two stick figures near a hearth, one covering coals"
+    },
+    {
+     "narration": "We gather our brass pots and earthenware vessels, the tools that will simmer porridge and stew for the whole family today.",
+     "caption": "Preparing cooking pots",
+     "image_prompt": "stick figure holding a pot, another holding a clay jar"
+    },
+    {
+     "narration": "Outside, the yardland stretches, a patchwork of fields that belong to the manor but we tend for our subsistence.",
+     "caption": "Fields beyond the house",
+     "image_prompt": "stick figure looking over a simple field with a fence"
+    },
+    {
+     "narration": "The smell of damp straw fills the air as I sweep the floor, keeping soot from the hearth from covering the whole room.",
+     "caption": "Sweeping the hall",
+     "image_prompt": "stick figure with a broom near a low wall"
+    },
+    {
+     "narration": "Before the sun climbs fully, we share a thin loaf of rye, a modest breakfast that fuels us for the long day ahead.",
+     "caption": "Morning bread shared",
+     "image_prompt": "two stick figures sitting on a bench, passing a loaf"
+    }
+   ]
+  },
+  {
+   "chapter_title": "The Open Field System",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "Across medieval England, most peasants worked the open field system, a communal arrangement where strips of land were cultivated side by side.",
+     "caption": "Open field strips",
+     "image_prompt": "stick figure with a plow beside parallel lines"
+    },
+    {
+     "narration": "Each villager held a portion of the arable land, but the fields, pastures, and waste were held in common, requiring cooperation each season.",
+     "caption": "Shared pastures",
+     "image_prompt": "two stick figures herding sheep in a shared area"
+    },
+    {
+     "narration": "In return for this right, peasants owed labor, a portion of the harvest, or rent to the lord of the manor, often a bishop or noble.",
+     "caption": "Feudal obligations",
+     "image_prompt": "stick figure handing a sheaf to a taller figure"
+    },
+    {
+     "narration": "The system persisted for centuries, only giving way gradually to enclosed, individually owned farms after the Black Death reduced the population.",
+     "caption": "Post\u2011plague change",
+     "image_prompt": "stick figure standing beside a fence, looking at a lone field"
+    },
+    {
+     "narration": "Legal status varied\u2014some peasants were free tenants, many held land by copyhold or customary tenure, yet daily life centered on the fields.",
+     "caption": "Tenure types",
+     "image_prompt": "stick figure with a scroll next to a field"
+    },
+    {
+     "narration": "The open field required careful coordination: plowing, sowing, and harvesting were scheduled so that neighbors did not work the same strip simultaneously.",
+     "caption": "Coordinated planting",
+     "image_prompt": "two stick figures with plows on adjacent strips"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Crafting and Cooking Inside",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "Back in the house, I set a brandreth over the fire, an early iron grate that lets me cook pots more evenly.",
+     "caption": "Using a brandreth",
+     "image_prompt": "stick figure placing a pot on a simple grate"
+    },
+    {
+     "narration": "My wife ladles ale from a small wooden vat; brewing at home is common, though the manor licenses the larger brewers.",
+     "caption": "Home brewing ale",
+     "image_prompt": "stick figure pouring from a barrel"
+    },
+    {
+     "narration": "We keep brass pans for frying and earthenware jars for storing milk, cheese, and preserved vegetables for the winter months.",
+     "caption": "Storing food",
+     "image_prompt": "stick figure stacking jars on a shelf"
+    },
+    {
+     "narration": "When the fire burns low, we cover it with a metal lid, conserving heat and protecting the hearth from drafts.",
+     "caption": "Covering the fire",
+     "image_prompt": "stick figure placing a lid over coals"
+    },
+    {
+     "narration": "Our linens\u2014simple cloths for the table\u2014are washed in a basin, then hung to dry on a low beam outside the home.",
+     "caption": "Washing linens",
+     "image_prompt": "stick figure hanging cloth on a line"
+    },
+    {
+     "narration": "Even a modest kitchen holds a chest for tools, a few brass spoons, and a small bench where children learn to stir the pot.",
+     "caption": "Kitchen bench",
+     "image_prompt": "stick figure child stirring a pot on a bench"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Social Structure and the Village",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "Peasants formed the backbone of medieval society, making up roughly eighty\u2011five percent of the population in Europe.",
+     "caption": "Peasants dominate",
+     "image_prompt": "many stick figures clustered, few taller figures"
+    },
+    {
+     "narration": "Three legal categories existed: slaves, serfs bound to the land, and free tenants who could move or sell their holdings.",
+     "caption": "Three peasant classes",
+     "image_prompt": "three stick figures labeled slave, serf, free"
+    },
+    {
+     "narration": "In England, most lived under customary or copyhold tenure, a system that tied them to the manor but allowed some local rights.",
+     "caption": "Customary tenure",
+     "image_prompt": "stick figure holding a small deed near a manor"
+    },
+    {
+     "narration": "Village life revolved around the church, market days, and seasonal festivals, providing rare moments of communal celebration.",
+     "caption": "Village festivals",
+     "image_prompt": "stick figures around a simple cross"
+    },
+    {
+     "narration": "Households were larger than modern nuclear families; extended kin, apprentices, and occasional servants shared the same roof.",
+     "caption": "Extended households",
+     "image_prompt": "several stick figures under one roof"
+    },
+    {
+     "narration": "The manor lord administered justice, collected dues, and organized communal work, while peasants negotiated their own marriages and disputes.",
+     "caption": "Manor justice",
+     "image_prompt": "stick figure lord with a gavel, peasants listening"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Housing Across Regions",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "In Kent and East Anglia my neighbor's house boasts a timber frame with crown posts, a sign of modest prosperity.",
+     "caption": "Kentish timber house",
+     "image_prompt": "stick figure beside a simple framed house"
+    },
+    {
+     "narration": "Further inland, many homes are cruck\u2011built, the paired timbers forming a sturdy A\u2011shape that supports the roof without interior walls.",
+     "caption": "Cruck construction",
+     "image_prompt": "stick figure under an A\u2011shaped roof"
+    },
+    {
+     "narration": "Our walls are wattle and daub, the same material that lets smoke from the hearth seep through, leaving soot on the beams.",
+     "caption": "Wattle walls",
+     "image_prompt": "stick figure tapping a wall, smoke rising"
+    },
+    {
+     "narration": "We never have a chimney; the open hall lets the smoke rise to the thatch, where it escapes, warming the roof on cold nights.",
+     "caption": "No chimney needed",
+     "image_prompt": "stick figure looking up at thatch with smoke"
+    },
+    {
+     "narration": "Larger yeomen may add a separate bakehouse or brewhouse, but most of us share one room for living, sleeping, and keeping animals.",
+     "caption": "One\u2011room living",
+     "image_prompt": "stick figure with a cow inside a small house"
+    },
+    {
+     "narration": "Archaeology now shows many of these houses lasted for generations, contradicting older views that they were merely temporary huts.",
+     "caption": "Enduring homes",
+     "image_prompt": "stick figure with a calendar beside a house"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Work, Play, and Survival",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "Daily labor was relentless: plowing, sowing, harvesting, repairing tools, and caring for livestock consumed most daylight hours.",
+     "caption": "Relentless labor",
+     "image_prompt": "stick figure with a plow under a sun"
+    },
+    {
+     "narration": "Yet peasants found leisure in simple games, storytelling, and occasional contests like cage matches\u2014much like the fictional \u201cRustler\u201d portrays.",
+     "caption": "Peasant pastimes",
+     "image_prompt": "two stick figures wrestling in a ring"
+    },
+    {
+     "narration": "Seasonal markets allowed us to sell surplus grain or ale, buying cloth or tools we could not make ourselves.",
+     "caption": "Market exchange",
+     "image_prompt": "stick figure with a sack trading with another"
+    },
+    {
+     "narration": "When harvest failed, famine loomed; the manor could demand a portion of what little remained, pushing families to the brink.",
+     "caption": "Harvest risk",
+     "image_prompt": "stick figure looking at empty granary"
+    },
+    {
+     "narration": "Disease, especially the Black Death, dramatically reduced the labor pool, giving surviving peasants more bargaining power.",
+     "caption": "Post\u2011plague shift",
+     "image_prompt": "stick figure holding a sign \u2018more land\u2019"
+    },
+    {
+     "narration": "Over time, this scarcity led to higher wages, greater mobility, and eventually the enclosure movement that reshaped rural England.",
+     "caption": "Enclosure begins",
+     "image_prompt": "stick figure watching a fence rise"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Legacy of the Medieval Peasant",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "I end my day by the dying fire, grateful for the modest comforts that have survived centuries of change.",
+     "caption": "Evening by the fire",
+     "image_prompt": "stick figure sitting near a low fire"
+    },
+    {
+     "narration": "Our houses, once dismissed as crude huts, now stand as thousands of archaeological testimonies to resilience.",
+     "caption": "Huts become history",
+     "image_prompt": "stick figure pointing at ruins"
+    },
+    {
+     "narration": "The open field system taught us cooperation, a lesson that echoes in modern community farming and sustainable practices.",
+     "caption": "Cooperation echoes",
+     "image_prompt": "stick figures planting together"
+    },
+    {
+     "narration": "From the hearth\u2019s smoke to the market\u2019s barter, every act stitched the fabric of a society that would eventually seed the Enlightenment.",
+     "caption": "From hearth to Enlightenment",
+     "image_prompt": "stick figure holding a candle above a book"
+    },
+    {
+     "narration": "Even video games like \u201cRustler\u201d borrow our world\u2019s imagery, reminding us that the medieval peasant\u2019s story still captures imaginations.",
+     "caption": "Peasants in pop culture",
+     "image_prompt": "stick figure with a game controller"
+    },
+    {
+     "narration": "When you walk past a thatched roof or hear a distant plow, remember the lives that built the foundations of our modern world.",
+     "caption": "Remember their legacy",
+     "image_prompt": "stick figure looking at a distant thatch"
+    }
+   ]
+  }
+ ]
+}
