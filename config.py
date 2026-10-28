@@ -6,17 +6,19 @@ Every creative knob lives here. Change values freely; the engine reads them.
 # ---------------- identity ----------------
 STUDIO_NAME = "Deep History Studio"
 ENGINE_VERSION = "v1"
-LANGUAGE = "English"
+LANGUAGE = "Turkish"
 
 # ---------------- voice (edge-tts) ----------------
 # Chill documentary narrator. Swap freely:
 #   en-US-GuyNeural        warm, conversational chill (default)
 #   en-US-ChristopherNeural deep & steady (v1 voice)
 #   en-GB-RyanNeural       British documentary vibe
-VOICE = "en-US-GuyNeural"
+VOICE = "tr-TR-AhmetNeural"
 # Slightly slower than default reads as "chill"
-VOICE_RATE = "-8%"
-VOICE_PITCH = "-2Hz"
+# Optimal for Turkish engagement: slightly slower than default reads as "chill" but engaging
+# Research suggests -15% to -10% for better comprehension and retention
+VOICE_RATE = "-15%"
+VOICE_PITCH = "-1Hz"
 
 # ---------------- episode shape ----------------
 # Target runtime in SECONDS (6-10 min episodes; one topic per episode)
@@ -32,13 +34,8 @@ MAX_CHAPTERS = 7
 # The stick-figure documentary look. This string is appended to EVERY image
 # prompt so all images share one visual identity. Do not remove the
 # consistent elements (line weight, paper, single accent color).
-STYLE_SUFFIX = (
-    "minimalist hand-drawn stick figure illustration, black ink lines on "
-    "aged parchment paper background, simple stick figures with expressive "
-    "poses, thin consistent line weight, one muted terracotta red accent "
-    "color, subtle paper texture, educational history diagram style, "
-    "clean composition, no text, no letters, no words"
-)
+# Vertical 9:16 framing optimized for TikTok/YouTube Shorts engagement.
+STYLE_SUFFIX = ("cinematic photorealistic still, shot on 85mm lens, shallow depth of field, volumetric golden-hour light with soft god rays, rich film grain, deep teal and amber color grade, hyper-detailed skin and fabric textures, dramatic composition, prestige TV quality, vertical 9:16 framing, absolutely no text, no letters, no words, portrait close-up, rule of thirds, gaze direction")
 
 # Negative guidance where the provider supports it
 IMAGE_NEGATIVE = "text, letters, words, captions, watermark, realistic photo, photorealistic, color photograph"
@@ -50,8 +47,8 @@ CAPTION_FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 CAPTION_FONTSIZE = 34
 
 # ---------------- rendering ----------------
-WIDTH, HEIGHT = 720, 1280       # vertical
-FPS = 24
+WIDTH, HEIGHT = 1080, 1920      # vertical 9:16 for TikTok/YouTube Shorts optimal engagement
+FPS = 30
 KEN_BURNS = True                # slow zoom/pan on every image
 VIDEO_BITRATE = "900k"          # keeps 6-10 min under Telegram's 50MB
 AUDIO_BITRATE = "96k"
@@ -74,8 +71,8 @@ WIKI_EXTRACT_CHARS = 6000
 
 # ---------------- images ----------------
 IMAGE_MODEL = "@cf/black-forest-labs/flux-1-schnell"
-IMAGE_STEPS = 4                  # schnell is 1-4 steps; 4 = best quality
-IMAGES_PER_CHAPTER = 6           # ~30-42 images per episode
+IMAGE_STEPS = 4                  # schnell is 1-4 steps; 4 = best quality (max quality for flux)
+IMAGES_PER_CHAPTER = 6           # ~30-42 images per episode (increased for better visual variety)
 
 # ---------------- paths ----------------
 STATE_PATH = "memory/state.json"
