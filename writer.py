@@ -32,7 +32,7 @@ import urllib.request
 from config import (
     GROQ_MODELS, GROQ_MAX_COMPLETION_TOKENS, GEMINI_MODEL,
     TARGET_SECONDS_MIN, TARGET_SECONDS_MAX, WORDS_PER_SECOND,
-    MIN_CHAPTERS, MAX_CHAPTERS, IMAGES_PER_CHAPTER,
+    MIN_CHAPTERS, MAX_CHAPTERS, IMAGES_PER_CHAPTER, LANGUAGE,
 )
 from researcher import load_digest
 
@@ -67,6 +67,12 @@ def writer_prompt(topic, digest):
         "plainly):\n"
         "{sources_text}\n\n"
         "TASK: Write ONE episode of a series on this topic.\n"
+        "- LANGUAGE: write EVERYTHING the viewer reads or hears — narration, "
+        "chapter_title, title, description, hashtags and caption — in {language}. "
+        "The research sources are in English; translate their facts into "
+        "{language} naturally (never leave English sentences in the "
+        "narration). The ONLY field that must stay in English is "
+        "image_prompt (the image model only understands English).\n"
         "- {min_ch}-{max_ch} chapters, each with a chapter_title.\n"
         "- Alternate chapter modes between \"first_person\" and \"overview\".\n"
         "- Each chapter has exactly {bpc} beats.\n"
@@ -105,6 +111,7 @@ def writer_prompt(topic, digest):
         "Source URLs to credit in the description: {urls}"
     ).format(
         topic=topic,
+        language=LANGUAGE,
         sources_text=sources_text,
         min_ch=MIN_CHAPTERS,
         max_ch=MAX_CHAPTERS,
