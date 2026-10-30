@@ -1,0 +1,326 @@
+[
+ {
+  "index": 1,
+  "chapter_title": "Sabah\u0131n \u0130lk I\u015f\u0131klar\u0131",
+  "mode": "first_person",
+  "caption": "\u0130stanbul sabah\u0131",
+  "image_prompt": "stick figure waking up beside a simple house with a minaret",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_001.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_001.mp3"
+ },
+ {
+  "index": 2,
+  "chapter_title": "Sabah\u0131n \u0130lk I\u015f\u0131klar\u0131",
+  "mode": "first_person",
+  "caption": "Saray haz\u0131rl\u0131\u011f\u0131",
+  "image_prompt": "stick figure sultan with attendants walking out of a gate",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_002.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_002.mp3"
+ },
+ {
+  "index": 3,
+  "chapter_title": "Sabah\u0131n \u0130lk I\u015f\u0131klar\u0131",
+  "mode": "first_person",
+  "caption": "Kervan \u00e7ar\u015f\u0131da",
+  "image_prompt": "stick figure merchant with a cart full of boxes",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_003.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_003.mp3"
+ },
+ {
+  "index": 4,
+  "chapter_title": "Sabah\u0131n \u0130lk I\u015f\u0131klar\u0131",
+  "mode": "first_person",
+  "caption": "Ezan \u00e7al\u0131yor",
+  "image_prompt": "stick figure muezzin on a minaret calling prayer",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_004.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_004.mp3"
+ },
+ {
+  "index": 5,
+  "chapter_title": "Sabah\u0131n \u0130lk I\u015f\u0131klar\u0131",
+  "mode": "first_person",
+  "caption": "Kanun ve \u015feriat",
+  "image_prompt": "stick figure judge holding a scroll next to a mosque",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_005.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_005.mp3"
+ },
+ {
+  "index": 6,
+  "chapter_title": "Sabah\u0131n \u0130lk I\u015f\u0131klar\u0131",
+  "mode": "first_person",
+  "caption": "Umut ve endi\u015fe",
+  "image_prompt": "stick figure crowd looking up at sunrise",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_006.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_006.mp3"
+ },
+ {
+  "index": 7,
+  "chapter_title": "S\u00fcleyman\u2019\u0131n Fetihleri ve \u0130mparatorlu\u011fun Geni\u015flemesi",
+  "mode": "overview",
+  "caption": "S\u00fcleyman\u2019\u0131n seferleri",
+  "image_prompt": "stick figure sultan with sword and map",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_007.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_007.mp3"
+ },
+ {
+  "index": 8,
+  "chapter_title": "S\u00fcleyman\u2019\u0131n Fetihleri ve \u0130mparatorlu\u011fun Geni\u015flemesi",
+  "mode": "overview",
+  "caption": "Belgrad ku\u015fatmas\u0131",
+  "image_prompt": "stick figure soldiers surrounding a wall",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_008.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_008.mp3"
+ },
+ {
+  "index": 9,
+  "chapter_title": "S\u00fcleyman\u2019\u0131n Fetihleri ve \u0130mparatorlu\u011fun Geni\u015flemesi",
+  "mode": "overview",
+  "caption": "Rodos\u2019un d\u00fc\u015f\u00fc\u015f\u00fc",
+  "image_prompt": "stick figure knights leaving an island",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_009.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_009.mp3"
+ },
+ {
+  "index": 10,
+  "chapter_title": "S\u00fcleyman\u2019\u0131n Fetihleri ve \u0130mparatorlu\u011fun Geni\u015flemesi",
+  "mode": "overview",
+  "caption": "Moh\u00e1cs zaferi",
+  "image_prompt": "stick figure army defeating another army",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_010.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_010.mp3"
+ },
+ {
+  "index": 11,
+  "chapter_title": "S\u00fcleyman\u2019\u0131n Fetihleri ve \u0130mparatorlu\u011fun Geni\u015flemesi",
+  "mode": "overview",
+  "caption": "Viyana ku\u015fatmas\u0131",
+  "image_prompt": "stick figure siege towers near a gate",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_011.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_011.mp3"
+ },
+ {
+  "index": 12,
+  "chapter_title": "S\u00fcleyman\u2019\u0131n Fetihleri ve \u0130mparatorlu\u011fun Geni\u015flemesi",
+  "mode": "overview",
+  "caption": "N\u00fcfus art\u0131\u015f\u0131",
+  "image_prompt": "stick figure crowd with numbers above",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_012.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_012.mp3"
+ },
+ {
+  "index": 13,
+  "chapter_title": "Mahidevran ve \u015eehzade Mustafa\u2019n\u0131n G\u00f6lgesinde",
+  "mode": "first_person",
+  "caption": "Mustafa\u2019y\u0131 izliyorum",
+  "image_prompt": "stick figure prince on a balcony",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_013.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_013.mp3"
+ },
+ {
+  "index": 14,
+  "chapter_title": "Mahidevran ve \u015eehzade Mustafa\u2019n\u0131n G\u00f6lgesinde",
+  "mode": "first_person",
+  "caption": "Valilik g\u00f6revleri",
+  "image_prompt": "stick figure prince with a staff in a city",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_014.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_014.mp3"
+ },
+ {
+  "index": 15,
+  "chapter_title": "Mahidevran ve \u015eehzade Mustafa\u2019n\u0131n G\u00f6lgesinde",
+  "mode": "first_person",
+  "caption": "Janissary sevgisi",
+  "image_prompt": "stick figure soldier saluting prince",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_015.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_015.mp3"
+ },
+ {
+  "index": 16,
+  "chapter_title": "Mahidevran ve \u015eehzade Mustafa\u2019n\u0131n G\u00f6lgesinde",
+  "mode": "first_person",
+  "caption": "H\u00fcrrem\u2019in etkisi",
+  "image_prompt": "stick figure woman whispering to sultan",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_016.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_016.mp3"
+ },
+ {
+  "index": 17,
+  "chapter_title": "Mahidevran ve \u015eehzade Mustafa\u2019n\u0131n G\u00f6lgesinde",
+  "mode": "first_person",
+  "caption": "Yard\u0131m talebi",
+  "image_prompt": "stick figure prince pleading to official",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_017.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_017.mp3"
+ },
+ {
+  "index": 18,
+  "chapter_title": "Mahidevran ve \u015eehzade Mustafa\u2019n\u0131n G\u00f6lgesinde",
+  "mode": "first_person",
+  "caption": "Mustafa\u2019n\u0131n sonu",
+  "image_prompt": "stick figure execution scene with sword",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_018.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_018.mp3"
+ },
+ {
+  "index": 19,
+  "chapter_title": "Kanun ve \u015eeriat: Hukukun \u0130ki Y\u00fcz\u00fc",
+  "mode": "overview",
+  "caption": "Kanun\u2011\u015eeriat birli\u011fi",
+  "image_prompt": "stick figure sultan and scholar holding scrolls",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_019.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_019.mp3"
+ },
+ {
+  "index": 20,
+  "chapter_title": "Kanun ve \u015eeriat: Hukukun \u0130ki Y\u00fcz\u00fc",
+  "mode": "overview",
+  "caption": "\u0130ki sistem yan yana",
+  "image_prompt": "stick figure scales balancing two books",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_020.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_020.mp3"
+ },
+ {
+  "index": 21,
+  "chapter_title": "Kanun ve \u015eeriat: Hukukun \u0130ki Y\u00fcz\u00fc",
+  "mode": "overview",
+  "caption": "\u015eeyh\u00fclislam\u2019\u0131n rol\u00fc",
+  "image_prompt": "stick figure cleric with a turban",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_021.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_021.mp3"
+ },
+ {
+  "index": 22,
+  "chapter_title": "Kanun ve \u015eeriat: Hukukun \u0130ki Y\u00fcz\u00fc",
+  "mode": "overview",
+  "caption": "Jizya vergisi",
+  "image_prompt": "stick figure tax collector with coin",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_022.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_022.mp3"
+ },
+ {
+  "index": 23,
+  "chapter_title": "Kanun ve \u015eeriat: Hukukun \u0130ki Y\u00fcz\u00fc",
+  "mode": "overview",
+  "caption": "Alevi zulm\u00fc",
+  "image_prompt": "stick figure group with sorrowful faces",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_023.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_023.mp3"
+ },
+ {
+  "index": 24,
+  "chapter_title": "Kanun ve \u015eeriat: Hukukun \u0130ki Y\u00fcz\u00fc",
+  "mode": "overview",
+  "caption": "N\u00fcfusun ba\u011flar\u0131",
+  "image_prompt": "stick figure crowd linked by rope",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_024.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_024.mp3"
+ },
+ {
+  "index": 25,
+  "chapter_title": "K\u00fclt\u00fcr ve Sanat\u0131n Alt\u0131n \u00c7a\u011f\u0131",
+  "mode": "first_person",
+  "caption": "Ustan\u0131n \u00e7ini\u011fi",
+  "image_prompt": "stick figure artisan holding a vase",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_025.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_025.mp3"
+ },
+ {
+  "index": 26,
+  "chapter_title": "K\u00fclt\u00fcr ve Sanat\u0131n Alt\u0131n \u00c7a\u011f\u0131",
+  "mode": "first_person",
+  "caption": "Sinan\u2019\u0131n mimarisi",
+  "image_prompt": "stick figure with a dome building",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_026.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_026.mp3"
+ },
+ {
+  "index": 27,
+  "chapter_title": "K\u00fclt\u00fcr ve Sanat\u0131n Alt\u0131n \u00c7a\u011f\u0131",
+  "mode": "first_person",
+  "caption": "Divan \u015fiiri",
+  "image_prompt": "stick figure poet with quill",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_027.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_027.mp3"
+ },
+ {
+  "index": 28,
+  "chapter_title": "K\u00fclt\u00fcr ve Sanat\u0131n Alt\u0131n \u00c7a\u011f\u0131",
+  "mode": "first_person",
+  "caption": "H\u00fcrrem\u2019in etkisi",
+  "image_prompt": "stick figure woman with crown",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_028.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_028.mp3"
+ },
+ {
+  "index": 29,
+  "chapter_title": "K\u00fclt\u00fcr ve Sanat\u0131n Alt\u0131n \u00c7a\u011f\u0131",
+  "mode": "first_person",
+  "caption": "\u00c7ar\u015f\u0131 canl\u0131l\u0131\u011f\u0131",
+  "image_prompt": "stick figure market stalls",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_029.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_029.mp3"
+ },
+ {
+  "index": 30,
+  "chapter_title": "K\u00fclt\u00fcr ve Sanat\u0131n Alt\u0131n \u00c7a\u011f\u0131",
+  "mode": "first_person",
+  "caption": "Saray \u015f\u00f6leni",
+  "image_prompt": "stick figure musicians and dancers",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_030.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_030.mp3"
+ },
+ {
+  "index": 31,
+  "chapter_title": "Miras ve D\u00fc\u015f\u00fcnceler",
+  "mode": "overview",
+  "caption": "S\u00fcleyman\u2019\u0131n vefat\u0131",
+  "image_prompt": "stick figure sultan lying on a bed",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_031.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_031.mp3"
+ },
+ {
+  "index": 32,
+  "chapter_title": "Miras ve D\u00fc\u015f\u00fcnceler",
+  "mode": "overview",
+  "caption": "De\u011fi\u015fen s\u0131n\u0131rlar",
+  "image_prompt": "stick figure map with shifting borders",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_032.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_032.mp3"
+ },
+ {
+  "index": 33,
+  "chapter_title": "Miras ve D\u00fc\u015f\u00fcnceler",
+  "mode": "overview",
+  "caption": "Denge bozuluyor",
+  "image_prompt": "stick figure scales tipping",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_033.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_033.mp3"
+ },
+ {
+  "index": 34,
+  "chapter_title": "Miras ve D\u00fc\u015f\u00fcnceler",
+  "mode": "overview",
+  "caption": "Sanat devam ediyor",
+  "image_prompt": "stick figure artist painting",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_034.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_034.mp3"
+ },
+ {
+  "index": 35,
+  "chapter_title": "Miras ve D\u00fc\u015f\u00fcnceler",
+  "mode": "overview",
+  "caption": "G\u00fcn\u00fcm\u00fcz yans\u0131mas\u0131",
+  "image_prompt": "stick figure modern city skyline",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_035.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_035.mp3"
+ },
+ {
+  "index": 36,
+  "chapter_title": "Miras ve D\u00fc\u015f\u00fcnceler",
+  "mode": "overview",
+  "caption": "Bar\u0131\u015f\u0131n laboratuvar\u0131",
+  "image_prompt": "stick figure hands holding different symbols",
+  "image": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/images/img_036.png",
+  "audio": "episodes/ep005-life-in-the-ottoman-empire-under-suleima/audio/aud_036.mp3"
+ }
+]

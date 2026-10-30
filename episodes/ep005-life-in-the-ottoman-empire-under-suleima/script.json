@@ -1,0 +1,225 @@
+{
+ "title": "S\u00fcleyman'\u0131n Zirvesinde: Osmanl\u0131 Ya\u015fam\u0131",
+ "description": "S\u00fcleyman I d\u00f6nemi Osmanl\u0131 ya\u015fam\u0131 \u00fczerine bir yolculuk. Kaynaklar: https://en.wikipedia.org/wiki/Suleiman_the_Magnificent, https://en.wikipedia.org/wiki/Suleiman_II_%28Ottoman_sultan%29, https://en.wikipedia.org/wiki/%C5%9Eehzade_Mustafa_%28son_of_Suleiman_the_Magnificent%29, https://en.wikipedia.org/wiki/Islam_in_the_Ottoman_Empire",
+ "hashtags": [
+  "#history"
+ ],
+ "chapters": [
+  {
+   "chapter_title": "Sabah\u0131n \u0130lk I\u015f\u0131klar\u0131",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "\u0130stanbul'un dar sokaklar\u0131nda uyan\u0131yorum. Hava serin, camilerden ezan sesleri y\u00fckseliyor. \u015eehrin kalbinde, yeni bir g\u00fcn\u00fcn ba\u015flamas\u0131na tan\u0131kl\u0131k ediyorum.",
+     "caption": "\u0130stanbul sabah\u0131",
+     "image_prompt": "stick figure waking up beside a simple house with a minaret"
+    },
+    {
+     "narration": "Saray\u0131n kap\u0131lar\u0131 a\u00e7\u0131l\u0131yor, hizmet\u00e7iler \u00e7ar\u015f\u0131ya do\u011fru ko\u015fuyor. G\u00fcn\u00fcn ilk i\u015flevi, Sultan S\u00fcleyman'\u0131n sabah y\u00fcr\u00fcy\u00fc\u015f\u00fcne haz\u0131rl\u0131k yapmak.",
+     "caption": "Saray haz\u0131rl\u0131\u011f\u0131",
+     "image_prompt": "stick figure sultan with attendants walking out of a gate"
+    },
+    {
+     "narration": "Ben bir t\u00fcccar\u0131m; baharat ve ipek ta\u015f\u0131yan kervanlar \u015fehrin \u00e7ar\u015f\u0131s\u0131na giriyor. Her bir paket, imparatorlu\u011fun geni\u015f topraklar\u0131ndan getirilen bir hik\u00e2ye.",
+     "caption": "Kervan \u00e7ar\u015f\u0131da",
+     "image_prompt": "stick figure merchant with a cart full of boxes"
+    },
+    {
+     "narration": "Sokakta bir m\u00fcezzin, ezan\u0131 y\u00fcksek sesle okur; bu, Osmanl\u0131\u2019n\u0131n resmi dini olan S\u00fcnni \u0130slam\u2019\u0131n g\u00fcnl\u00fck rit\u00fcelini hat\u0131rlat\u0131r.",
+     "caption": "Ezan \u00e7al\u0131yor",
+     "image_prompt": "stick figure muezzin on a minaret calling prayer"
+    },
+    {
+     "narration": "\u015eehrin her k\u00f6\u015fesinde, kanun (Kanun) ve \u015feriat bir arada y\u00fcr\u00fcr. S\u00fcleyman, Ebussuud Efendi ile kanunlar\u0131 d\u00fczenlerken, adaletin iki y\u00f6n\u00fc bir arada i\u015fler.",
+     "caption": "Kanun ve \u015feriat",
+     "image_prompt": "stick figure judge holding a scroll next to a mosque"
+    },
+    {
+     "narration": "G\u00fcn do\u011farken, halk\u0131n y\u00fczlerinde umut ve endi\u015fe bir arada. Bu, imparatorlu\u011fun en parlak d\u00f6neminin i\u00e7inde bir anl\u0131k nefes gibi.",
+     "caption": "Umut ve endi\u015fe",
+     "image_prompt": "stick figure crowd looking up at sunrise"
+    }
+   ]
+  },
+  {
+   "chapter_title": "S\u00fcleyman\u2019\u0131n Fetihleri ve \u0130mparatorlu\u011fun Geni\u015flemesi",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "1520 y\u0131l\u0131nda tahta \u00e7\u0131kan S\u00fcleyman, k\u0131sa s\u00fcrede Avrupa ve Akdeniz\u2019de b\u00fcy\u00fck seferler d\u00fczenledi. 1521\u2019de Belgrad, 1522\u2019de Rodos ve 1526\u2019da Moh\u00e1cs muharebesi onun zaferleri aras\u0131ndad\u0131r.",
+     "caption": "S\u00fcleyman\u2019\u0131n seferleri",
+     "image_prompt": "stick figure sultan with sword and map"
+    },
+    {
+     "narration": "Belgrad\u2019\u0131n ku\u015fatmas\u0131 250 bin asker ve 100 gemiyle ger\u00e7ekle\u015fti; \u015fehir, Osmanl\u0131\u2019n\u0131n Balkan\u2019daki ikinci b\u00fcy\u00fck kenti oldu.",
+     "caption": "Belgrad ku\u015fatmas\u0131",
+     "image_prompt": "stick figure soldiers surrounding a wall"
+    },
+    {
+     "narration": "Rodos ku\u015fatmas\u0131 be\u015f ay s\u00fcrd\u00fc; sonunda Osmanl\u0131lar aday\u0131 ele ge\u00e7irdi ve \u015e\u00f6valyeler\u2019in ayr\u0131lmas\u0131na izin verdi.",
+     "caption": "Rodos\u2019un d\u00fc\u015f\u00fc\u015f\u00fc",
+     "image_prompt": "stick figure knights leaving an island"
+    },
+    {
+     "narration": "Moh\u00e1cs\u2019ta Macar ordusunu bozguna u\u011fratan S\u00fcleyman, Macaristan\u2019\u0131 ikiye b\u00f6lerek b\u00fcy\u00fck bir toprak kazanc\u0131 elde etti.",
+     "caption": "Moh\u00e1cs zaferi",
+     "image_prompt": "stick figure army defeating another army"
+    },
+    {
+     "narration": "1529\u2019da Viyana ku\u015fatmas\u0131 ba\u015far\u0131s\u0131z oldu; bu, Osmanl\u0131\u2019n\u0131n Avrupa\u2019ya ilerleyi\u015finde bir d\u00f6n\u00fcm noktas\u0131 oldu.",
+     "caption": "Viyana ku\u015fatmas\u0131",
+     "image_prompt": "stick figure siege towers near a gate"
+    },
+    {
+     "narration": "Bu fetihler, imparatorlu\u011fun n\u00fcfusunu en az 25 milyon ki\u015fiye y\u00fckseltti; ekonomik ve askeri g\u00fc\u00e7 doruk noktas\u0131na ula\u015ft\u0131.",
+     "caption": "N\u00fcfus art\u0131\u015f\u0131",
+     "image_prompt": "stick figure crowd with numbers above"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Mahidevran ve \u015eehzade Mustafa\u2019n\u0131n G\u00f6lgesinde",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "Ben bir saray g\u00f6revlisiyim; Mahidevran\u2019\u0131n o\u011flu \u015eehzade Mustafa\u2019y\u0131 yak\u0131ndan izliyorum. O, babas\u0131 S\u00fcleyman\u2019\u0131n en eski varisi ve halk\u0131n g\u00f6z\u00fcnde cesur bir lider.",
+     "caption": "Mustafa\u2019y\u0131 izliyorum",
+     "image_prompt": "stick figure prince on a balcony"
+    },
+    {
+     "narration": "Mustafa, 1533\u2019te Manisa\u2019n\u0131n valisi, sonra 1541\u2019de Amasya\u2019ya g\u00f6nderildi. Bu g\u00f6revler, onun y\u00f6neticilik yeteneklerini kan\u0131tlamas\u0131 i\u00e7indi.",
+     "caption": "Valilik g\u00f6revleri",
+     "image_prompt": "stick figure prince with a staff in a city"
+    },
+    {
+     "narration": "Janissaryler ona hayran; onun cesareti ve zek\u00e2s\u0131, ordunun kalbinde b\u00fcy\u00fck bir sevgi yaratm\u0131\u015ft\u0131.",
+     "caption": "Janissary sevgisi",
+     "image_prompt": "stick figure soldier saluting prince"
+    },
+    {
+     "narration": "Ancak H\u00fcrrem Sultan\u2019\u0131n o\u011fullar\u0131 da taht i\u00e7in yar\u0131\u015f\u0131yordu. Mustafa, babas\u0131n\u0131n g\u00f6z\u00fcnde bir tehdit olarak g\u00f6r\u00fclmeye ba\u015flad\u0131.",
+     "caption": "H\u00fcrrem\u2019in etkisi",
+     "image_prompt": "stick figure woman whispering to sultan"
+    },
+    {
+     "narration": "1549\u2019da Erzurum\u2019da bir G\u00fcrc\u00fc sald\u0131r\u0131s\u0131 oldu; Mustafa yard\u0131m istedi ama R\u00fcstem Pa\u015fa, kendi \u00e7\u0131karlar\u0131 i\u00e7in destek vermedi.",
+     "caption": "Yard\u0131m talebi",
+     "image_prompt": "stick figure prince pleading to official"
+    },
+    {
+     "narration": "Sonunda 1553\u2019te, S\u00fcleyman\u2019\u0131n emriyle Mustafa idam edildi. Saray\u0131n sessizli\u011fi, bir daha asla ayn\u0131 olmayacakt\u0131.",
+     "caption": "Mustafa\u2019n\u0131n sonu",
+     "image_prompt": "stick figure execution scene with sword"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Kanun ve \u015eeriat: Hukukun \u0130ki Y\u00fcz\u00fc",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "S\u00fcleyman, Ebussuud Efendi ile birlikte kanun (Kanun) ve \u015feriat (\u015eeriat) sistemlerini birle\u015ftirerek Osmanl\u0131 hukukunu g\u00fc\u00e7lendirdi.",
+     "caption": "Kanun\u2011\u015eeriat birli\u011fi",
+     "image_prompt": "stick figure sultan and scholar holding scrolls"
+    },
+    {
+     "narration": "Kanun, sultan\u0131n mutlak kararlar\u0131n\u0131; \u015feriat ise \u0130slam hukuku kurallar\u0131n\u0131 temsil ediyordu. Bu iki sistem, toplumsal d\u00fczeni sa\u011flamada yan yana \u00e7al\u0131\u015ft\u0131.",
+     "caption": "\u0130ki sistem yan yana",
+     "image_prompt": "stick figure scales balancing two books"
+    },
+    {
+     "narration": "\u015eeyh\u00fclislam, dini otoritenin en \u00fcst noktas\u0131ndayd\u0131; onun fetvalar\u0131 ekonomik ve sosyal politikalar\u0131 y\u00f6nlendirdi.",
+     "caption": "\u015eeyh\u00fclislam\u2019\u0131n rol\u00fc",
+     "image_prompt": "stick figure cleric with a turban"
+    },
+    {
+     "narration": "Az\u0131nl\u0131klar \u2013 Hristiyanlar ve Yahudiler \u2013 jizya ad\u0131 verilen bir vergi \u00f6deyerek korunuyordu; bu, imparatorlu\u011fun \u00e7ok dinli yap\u0131s\u0131n\u0131n bir par\u00e7as\u0131yd\u0131.",
+     "caption": "Jizya vergisi",
+     "image_prompt": "stick figure tax collector with coin"
+    },
+    {
+     "narration": "Alevi toplumu ise, Safavilerle olan s\u0131n\u0131r \u00e7at\u0131\u015fmalar\u0131 s\u0131ras\u0131nda hedef al\u0131nd\u0131; 1514\u2019te 40 bin Alevi \u00f6ld\u00fcr\u00fcld\u00fc.",
+     "caption": "Alevi zulm\u00fc",
+     "image_prompt": "stick figure group with sorrowful faces"
+    },
+    {
+     "narration": "Bu hukuki \u00e7er\u00e7eve, imparatorlu\u011fun 25 milyonluk n\u00fcfusunu bir arada tutan g\u00f6r\u00fcnmez bir ba\u011f olu\u015fturdu.",
+     "caption": "N\u00fcfusun ba\u011flar\u0131",
+     "image_prompt": "stick figure crowd linked by rope"
+    }
+   ]
+  },
+  {
+   "chapter_title": "K\u00fclt\u00fcr ve Sanat\u0131n Alt\u0131n \u00c7a\u011f\u0131",
+   "mode": "first_person",
+   "beats": [
+    {
+     "narration": "Ben bir \u00e7ini ustas\u0131y\u0131m; S\u00fcleyman\u2019\u0131n saray\u0131na yeni bir \u00e7ini tak\u0131m\u0131 getiriyorum. Sultan, bir \u015fair ve kuyumcu olarak da bilinir; sanata b\u00fcy\u00fck de\u011fer verir.",
+     "caption": "Ustan\u0131n \u00e7ini\u011fi",
+     "image_prompt": "stick figure artisan holding a vase"
+    },
+    {
+     "narration": "S\u00fcleyman d\u00f6neminde mimar Mimar Sinan\u2019\u0131n eserleri y\u00fckselmeye ba\u015flad\u0131; camiler, medreseler ve hamamlar \u015fehri s\u00fcsledi.",
+     "caption": "Sinan\u2019\u0131n mimarisi",
+     "image_prompt": "stick figure with a dome building"
+    },
+    {
+     "narration": "Divan \u015fiiri, sarayda bir ya\u015fam bi\u00e7imiydi; \u015eehzade Mustafa bile \u201cMuhlisi\u201d mahlas\u0131yla \u015fiirler yazard\u0131.",
+     "caption": "Divan \u015fiiri",
+     "image_prompt": "stick figure poet with quill"
+    },
+    {
+     "narration": "H\u00fcrrem Sultan, sarayda kad\u0131nlar\u0131n sesini y\u00fckseltti; \u201cKad\u0131nlar\u0131n Sultani D\u00f6nemi\u201d bu d\u00f6nemde ba\u015flad\u0131.",
+     "caption": "H\u00fcrrem\u2019in etkisi",
+     "image_prompt": "stick figure woman with crown"
+    },
+    {
+     "narration": "\u0130stanbul\u2019da \u00e7ar\u015f\u0131lar, baharat, ipek ve baharat gibi l\u00fcks mallarla doluydu; bu ticaret, imparatorlu\u011fun zenginli\u011fini besliyordu.",
+     "caption": "\u00c7ar\u015f\u0131 canl\u0131l\u0131\u011f\u0131",
+     "image_prompt": "stick figure market stalls"
+    },
+    {
+     "narration": "Her ak\u015fam, saray bah\u00e7elerinde m\u00fczik ve dans e\u015fli\u011finde bir \u015f\u00f6len d\u00fczenlenirdi; bu, \u201cAlt\u0131n \u00c7a\u011f\u201d\u0131n g\u00fcnl\u00fck ya\u015famda nas\u0131l yank\u0131land\u0131\u011f\u0131n\u0131 g\u00f6sterir.",
+     "caption": "Saray \u015f\u00f6leni",
+     "image_prompt": "stick figure musicians and dancers"
+    }
+   ]
+  },
+  {
+   "chapter_title": "Miras ve D\u00fc\u015f\u00fcnceler",
+   "mode": "overview",
+   "beats": [
+    {
+     "narration": "S\u00fcleyman 1566\u2019da vefat etti; ard\u0131ndan o\u011flu Selim II tahta ge\u00e7ti. Tarih\u00e7iler, onun \u00f6l\u00fcm\u00fcn\u00fc bir d\u00f6n\u00fcm noktas\u0131 olarak g\u00f6r\u00fcr, sonraki y\u0131llar\u0131n kriz ve d\u00f6n\u00fc\u015f\u00fcmle dolu oldu\u011funu s\u00f6yler.",
+     "caption": "S\u00fcleyman\u2019\u0131n vefat\u0131",
+     "image_prompt": "stick figure sultan lying on a bed"
+    },
+    {
+     "narration": "\u0130mparatorlu\u011fun s\u0131n\u0131rlar\u0131 h\u00e2l\u00e2 geni\u015fti, fakat ekonomik ve kurumsal de\u011fi\u015fimler yava\u015f yava\u015f ortaya \u00e7\u0131kmaya ba\u015flad\u0131.",
+     "caption": "De\u011fi\u015fen s\u0131n\u0131rlar",
+     "image_prompt": "stick figure map with shifting borders"
+    },
+    {
+     "narration": "Kanun\u2011\u015eeriat dengesi, sonraki sultanlar taraf\u0131ndan da s\u00fcrd\u00fcr\u00fclse de, uygulamadaki tutars\u0131zl\u0131klar yeni sorunlar do\u011furdu.",
+     "caption": "Denge bozuluyor",
+     "image_prompt": "stick figure scales tipping"
+    },
+    {
+     "narration": "Sanat ve mimarl\u0131k, S\u00fcleyman\u2019\u0131n g\u00f6lgesinde b\u00fcy\u00fcmeye devam etti; ancak devletin askeri ba\u015far\u0131s\u0131 yava\u015f yava\u015f azalmaya ba\u015flad\u0131.",
+     "caption": "Sanat devam ediyor",
+     "image_prompt": "stick figure artist painting"
+    },
+    {
+     "narration": "Bug\u00fcn, 500 y\u0131l sonra, \u0130stanbul\u2019un sil\u00fceti h\u00e2l\u00e2 S\u00fcleyman\u2019\u0131n izlerini ta\u015f\u0131r; onun d\u00f6nemindeki ya\u015fam, modern d\u00fcnyada bile bir merak konusudur.",
+     "caption": "G\u00fcn\u00fcm\u00fcz yans\u0131mas\u0131",
+     "image_prompt": "stick figure modern city skyline"
+    },
+    {
+     "narration": "Belki de en b\u00fcy\u00fck miras, farkl\u0131 din, k\u00fclt\u00fcr ve milletlerin bir arada ya\u015fad\u0131\u011f\u0131 bir imparatorlu\u011fun \u00f6rne\u011fidir; bu, bar\u0131\u015f ve ho\u015fg\u00f6r\u00fcn\u00fcn tarihsel bir laboratuvar\u0131d\u0131r.",
+     "caption": "Bar\u0131\u015f\u0131n laboratuvar\u0131",
+     "image_prompt": "stick figure hands holding different symbols"
+    }
+   ]
+  }
+ ]
+}
