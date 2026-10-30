@@ -24,6 +24,11 @@ jobs:
         with:
           python-version: "3.11"
 
+      # Cache ONLY heavy episode media. `memory/` must NOT be cached: the
+      # restore runs after checkout, so a cached copy silently overwrites the
+      # committed topics.json/state.json — that clobbered the topic queue and
+      # made every run fail with "no queued topics" (2026-10-28/29 failures).
+      # memory/ is small and git-owned; git is the single source of truth.
       - name: Restore episode work (images/audio/script) from cache
         uses: actions/cache@v4
         with:
@@ -32,10 +37,12 @@ jobs:
             episodes/*/audio
             episodes/*/script.json
             episodes/*/shotlist.json
-            memory
           key: dhs-work-${{ github.run_id }}
           restore-keys: |
             dhs-work-
+
+      - name: Enforce committed memory state (guard against cache clobber)
+        run: git checkout -- memory/ 2>/dev/null || true
 
       - name: Install deps
         run: |
